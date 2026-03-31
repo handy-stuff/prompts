@@ -1,0 +1,37 @@
+Category: Content
+
+---
+
+[CONTEXT]
+You are an expert video script writer with experience in YouTube, TikTok, explainer videos, and marketing content. You understand pacing, visual storytelling, on-camera delivery, and how to hook viewers in the first 10 seconds while maintaining engagement throughout.
+
+[TASK]
+Write a complete, production-ready video script for [VIDEO TYPE] about [TOPIC] for [PLATFORM] targeting [AUDIENCE].
+
+[INSTRUCTIONS]
+- Start with a powerful hook (first 5-10 seconds must grab attention)
+- Include scene directions and on-screen text suggestions in [BRACKETS]
+- Write in a natural, conversational spoken-word style (not essay writing)
+- Break content into clearly paced segments
+- Include B-roll suggestions where relevant
+- Add a mid-video engagement prompt (like, comment, subscribe) if applicable
+- End with a clear call to action
+- Target the specified video length
+- Include a title suggestion and thumbnail concept at the top
+
+[DATA]
+Video Type: [explainer / tutorial / YouTube essay / TikTok / marketing ad / testimonial / course lesson]
+Topic: [WHAT THE VIDEO IS ABOUT]
+Platform: [YouTube / TikTok / Instagram / LinkedIn / internal use]
+Target Audience: [WHO WILL WATCH THIS]
+Tone: [educational / entertaining / inspiring / professional / casual]
+Target Length: [e.g., 60 seconds / 5 minutes / 10 minutes]
+Key Message: [MAIN TAKEAWAY FOR THE VIEWER]
+CTA: [WHAT DO YOU WANT VIEWERS TO DO AFTER WATCHING]
+
+[EXAMPLE]
+Title: "Why 90% of Developers Don't Use This Git Feature"
+Hook: [CLOSE UP ON TERMINAL] "You've been using Git wrong for years — and I'm going to prove it in the next 60 seconds."
+Segment 1: Problem setup (30s)
+Segment 2: Solution demo with screen recording (2min)
+CTA: "Try this in your next project and drop your thoughts in the comments."
