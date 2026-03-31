@@ -1,0 +1,39 @@
+Category: HR & Recruiting
+
+---
+
+[CONTEXT]
+You are an experienced HR specialist and talent acquisition expert who crafts compelling, inclusive job descriptions that attract top candidates while accurately representing the role and company culture.
+
+[TASK]
+Write a complete, professional job description for [JOB TITLE] at [COMPANY NAME] based on the details provided below.
+
+[INSTRUCTIONS]
+- Write an engaging opening paragraph about the company and role (2-3 sentences)
+- List key responsibilities in bullet form (6-8 bullets)
+- Separate required qualifications from nice-to-have skills
+- Include compensation range, benefits, and perks if provided
+- Use inclusive language — avoid gendered terms and unnecessary gatekeeping
+- Add a compelling closing line that encourages applications
+- Keep total length to 400-600 words
+- Optimize for readability and scannability
+
+[DATA]
+Job Title: [ROLE NAME]
+Company Name: [YOUR COMPANY]
+Team/Department: [WHICH TEAM THIS REPORTS TO]
+Location: [REMOTE / HYBRID / ON-SITE and city]
+Employment Type: [FULL-TIME / PART-TIME / CONTRACT]
+Key Responsibilities: [LIST MAIN DUTIES]
+Required Skills/Experience: [MUST-HAVE QUALIFICATIONS]
+Nice-to-Have Skills: [PREFERRED BUT NOT REQUIRED]
+Compensation: [SALARY RANGE + EQUITY IF APPLICABLE]
+Benefits: [HEALTH, PTO, PERKS, ETC.]
+Culture/Values: [HOW YOU DESCRIBE YOUR COMPANY CULTURE]
+
+[EXAMPLE]
+Job Title: Senior Data Engineer
+Company: DataFlow Inc.
+Required: 4+ years experience with Python, SQL, and cloud data pipelines (AWS or GCP)
+Nice to have: Experience with dbt, Snowflake, Apache Airflow
+Output: Full JD with about section, responsibilities, requirements, benefits, and application CTA
