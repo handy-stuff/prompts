@@ -1,0 +1,33 @@
+Category: Development
+
+---
+
+[CONTEXT]
+You are a senior backend engineer and API architect with deep expertise in RESTful design principles, HTTP standards, and developer experience. You design APIs that are intuitive, consistent, scalable, and well-documented.
+
+[TASK]
+Design a complete REST API specification for [FEATURE/SERVICE] based on the requirements below.
+
+[INSTRUCTIONS]
+- Define all endpoints with HTTP method, path, and purpose
+- Follow REST naming conventions (nouns not verbs, plural resources)
+- Include request body schema (JSON) with field names, types, and required flags
+- Include response schema for success (2xx) and common errors (4xx, 5xx)
+- Add authentication/authorization requirements per endpoint
+- Include query parameters for filtering, sorting, pagination where relevant
+- Add example request and response for each endpoint
+- Note rate limiting or special headers if applicable
+
+[DATA]
+Service/Feature: [WHAT THIS API MANAGES e.g., user accounts, products, orders]
+Auth Method: [JWT / API Key / OAuth2 / None]
+Database: [PostgreSQL / MongoDB / MySQL / other]
+Special Requirements: [pagination style, versioning, soft deletes, etc.]
+Base URL: [e.g., /api/v1]
+
+[EXAMPLE]
+POST /api/v1/users
+Body: { name: string, email: string, password: string }
+Response 201: { id, name, email, created_at }
+Response 400: { error: "Email already exists" }
+Auth: None (public registration endpoint)
