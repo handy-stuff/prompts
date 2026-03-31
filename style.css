@@ -2,8 +2,12 @@
     --bg-color: #f4f4f9;
     --text-color: #333;
     --card-bg: #ffffff;
-    --primary-color: #4CAF50;
     --border-color: #ddd;
+    
+    /* BUTTON COLORS UPDATED */
+    --btn-blue: #2196F3;
+    --btn-blue-hover: #1976D2;
+    --btn-green: #4CAF50; 
 }
 
 body {
@@ -12,7 +16,7 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* SAFETY NET: Stops page from getting wider */
+    overflow-x: hidden;
 }
 
 header {
@@ -26,39 +30,97 @@ header {
     margin-top: 1.5rem;
     display: flex;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
 }
 
-input, select {
-    padding: 10px;
+input[type="text"] {
+    width: 400px;
+    max-width: 100%;
+    padding: 10px 15px;
     font-size: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 5px;
     outline: none;
 }
 
-input { width: 300px; max-width: 100%; }
-
-main {
-    padding: 2rem;
-    max-width: 1400px; /* Widened to comfortably fit 4 columns */
+/* --- NEW LAYOUT: SIDEBAR + MAIN GRID --- */
+.layout-wrapper {
+    display: flex;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: flex-start; /* Required for sticky sidebar */
 }
 
-/* --- EXACTLY 4 COLUMNS ON DESKTOP --- */
+/* --- SIDEBAR STYLES --- */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    
+    /* Makes it sticky when scrolling down */
+    position: sticky;
+    top: 2rem; 
+}
+
+.sidebar-header h3 {
+    margin: 0 0 5px 0;
+}
+
+.sidebar-hint {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0 0 15px 0;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.category-item input {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+/* --- MAIN CONTENT & GRID --- */
+main {
+    flex-grow: 1;
+    min-width: 0; /* Prevents flexbox from blowing out */
+}
+
+/* EXACTLY 3 COLUMNS */
 .grid-container {
     display: grid;
-    /* MAGIC FIX: minmax(0, 1fr) stops columns from expanding past their boundaries */
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     width: 100%;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 1100px) { .grid-container { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (max-width: 800px) { .grid-container { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 500px) { .grid-container { grid-template-columns: minmax(0, 1fr); } }
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .grid-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+    .layout-wrapper { flex-direction: column; }
+    .sidebar { width: 100%; position: static; }
+    .grid-container { grid-template-columns: minmax(0, 1fr); }
+}
 
 /* --- STRICT CARD SIZING --- */
 .card {
@@ -69,8 +131,6 @@ main {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-color);
-    
-    /* STRICT HEIGHT: 400px total */
     height: 400px; 
     box-sizing: border-box;
 }
@@ -80,7 +140,7 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    height: 30px; /* Fixed header height */
+    height: 30px; 
 }
 
 .card-header h3 {
@@ -101,7 +161,6 @@ main {
     white-space: nowrap;
 }
 
-/* --- STRICT TEXT BOX (Shows ~12 lines, then scrolls) --- */
 .prompt-text {
     background: var(--bg-color);
     padding: 15px;
@@ -113,36 +172,33 @@ main {
     color: #444;
     margin-bottom: 15px;
 
-    /* TEXT WRAPPING FIXES */
-    word-break: break-word;       /* Forces long words to break */
-    overflow-wrap: anywhere;      /* Forces long words to wrap */
-    overflow-x: hidden;           /* Prevents horizontal scrolling inside the box */
+    word-break: break-word;       
+    overflow-wrap: anywhere;      
+    overflow-x: hidden;           
 
-    /* SCROLLING MAGIC */
     flex: 1;
     min-height: 0; 
     overflow-y: auto; 
 }
 
-/* Custom Scrollbar */
 .prompt-text::-webkit-scrollbar { width: 8px; }
 .prompt-text::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
 .prompt-text::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
 .prompt-text::-webkit-scrollbar-thumb:hover { background: #888; }
 
-/* --- BUTTON FIX --- */
+/* --- UPDATED BUTTON COLORS --- */
 .copy-btn {
-    background-color: var(--primary-color);
+    background-color: var(--btn-blue); /* BLUE DEFAULT */
     color: white;
     border: none;
     padding: 12px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    height: 45px; /* Fixed button height */
+    height: 45px;
     transition: background 0.2s;
     width: 100%;
 }
 
-.copy-btn:hover { background-color: #45a049; }
-.copy-btn.copied { background-color: #2196F3; }
+.copy-btn:hover { background-color: var(--btn-blue-hover); }
+.copy-btn.copied { background-color: var(--btn-green) !important; /* GREEN ON SUCCESS */ }
