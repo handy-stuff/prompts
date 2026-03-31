@@ -1,13 +1,43 @@
 // 1. ADD YOUR TEXT FILE NAMES HERE
 const promptFiles = [
-    "Code Explainer.txt",
+    // ── Original 9 (upgraded) ──
+    "Blog Post Outline.txt",
     "Bug Fixer.txt",
-    "Meeting Summarizer.txt",
+    "Code Explainer.txt",
+    "Code Reviewer.txt",
     "Email Polisher.txt",
     "Learn a New Skill.txt",
-    "Social Media Calendar.txt",
+    "Meeting Summarizer.txt",
     "Midjourney Portrait.txt",
-    "SEO Content Strategist.txt" // Your new long prompt!
+    "Social Media Calendar.txt",
+
+    // ── Coding & Dev ──
+    "Code Refactorer.txt",
+    "Unit Test Generator.txt",
+    "API Documentation Writer.txt",
+    "README Generator.txt",
+    "Git Commit Message Generator.txt",
+
+    // ── Data & Analytics ──
+    "SQL Query Builder.txt",
+    "Snowflake Schema Builder.txt",
+
+    // ── AI & Prompt Engineering ──
+    "Prompt Improver.txt",
+    "System Prompt Builder.txt",
+
+    // ── Writing ──
+    "Cold Email Writer.txt",
+    "LinkedIn Post Generator.txt",
+
+    // ── Career & Job Search ──
+    "Resume Tailorer.txt",
+    "Cover Letter Writer.txt",
+    "Interview Prep Coach.txt",
+
+    // ── Automation & Tools ──
+    "Python Script Generator.txt",
+    "GitHub Actions Workflow Builder.txt"
 ];
 
 let prompts = []; 
