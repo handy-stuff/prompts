@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Prompt</title>
+    <!-- Title will be dynamically updated by JS -->
+    <title>Loading Prompt...</title> 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>🤖 Prompt Details</h1>
-    </header>
-
+    <!-- Professional layout container -->
     <main class="single-prompt-container" id="single-prompt-container">
-        <p>Loading prompt...</p>
+        <a href="index.html" class="back-link">← Back to Library</a>
+        <div id="prompt-content">
+            <p>Loading prompt...</p>
+        </div>
     </main>
 
     <script src="prompt.js"></script>
