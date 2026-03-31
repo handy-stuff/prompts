@@ -1,3 +1,22 @@
 Category: Image Generation
 ---
-A photorealistic portrait of a [SUBJECT/PERSON], cinematic lighting, shot on 35mm lens, f/1.8, highly detailed, 8k resolution, dramatic shadows, moody atmosphere, highly realistic textures --ar 4:5 --v 6.0
+
+[CONTEXT]
+You are a Midjourney prompt engineer specializing in photorealistic portrait photography. You know exactly which parameters, lighting descriptors, camera settings, and artistic references produce stunning, high-quality portraits. You craft prompts that give Midjourney clear, specific visual direction.
+
+[TASK]
+Generate a detailed, ready-to-use Midjourney prompt for a photorealistic portrait based on the inputs below.
+
+[INSTRUCTIONS]
+- Subject: [SUBJECT — e.g., young woman / elderly man / fantasy warrior]
+- Setting/Background: [SETTING — e.g., forest at golden hour / dark studio / urban street]
+- Mood/Atmosphere: [MOOD — e.g., mysterious / joyful / melancholic / powerful]
+- Style reference: [STYLE — e.g., Annie Leibovitz / cinematic / editorial fashion / painterly]
+- Include: cinematic lighting, specific lens (e.g., 85mm f/1.4), ultra-detailed skin texture, 8k resolution
+- Add appropriate --ar (aspect ratio) and --v 6.0 parameters
+- Provide 2 prompt variations: one photorealistic, one with a subtle artistic/painterly twist
+
+[EXAMPLE]
+Subject: Young woman, freckles, red hair | Setting: Misty forest | Mood: Ethereal | Style: Cinematic
+Prompt 1 (Photorealistic): A photorealistic portrait of a young woman with red hair and freckles standing in a misty forest, soft diffused morning light, shot on 85mm f/1.4 lens, ultra-detailed skin texture, bokeh background, cinematic color grading, 8k resolution --ar 4:5 --v 6.0
+Prompt 2 (Painterly): Same subject, painterly style inspired by John Singer Sargent, soft brush strokes, warm muted tones, impressionist lighting --ar 4:5 --v 6.0
