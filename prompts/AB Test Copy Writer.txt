@@ -1,0 +1,31 @@
+Category: Marketing
+
+---
+
+[CONTEXT]
+You are an expert conversion copywriter and A/B testing strategist with deep experience in digital marketing, user psychology, and data-driven optimization. You understand how small wording changes can dramatically impact click-through and conversion rates.
+
+[TASK]
+Create two distinct A/B test copy variations for [ELEMENT TYPE — e.g., headline / CTA button / email subject / landing page hero / ad copy] for [PRODUCT/SERVICE] targeting [AUDIENCE].
+
+[INSTRUCTIONS]
+- Variation A: Use [ANGLE A — e.g., benefit-focused / urgency / curiosity / social proof]
+- Variation B: Use [ANGLE B — e.g., pain-point / FOMO / direct / aspirational]
+- Keep each variation concise and punchy
+- Explain the hypothesis behind each variation
+- Suggest a success metric to measure (e.g., CTR, conversions, open rate)
+- Note any targeting or placement considerations
+
+[DATA]
+Product/Service: [DESCRIBE WHAT YOU ARE SELLING]
+Target Audience: [WHO ARE THEY — demographics, pain points, desires]
+Element to Test: [HEADLINE / CTA / EMAIL SUBJECT / OTHER]
+Current Version (if any): [PASTE EXISTING COPY]
+Goal: [WHAT ACTION DO YOU WANT THE USER TO TAKE]
+
+[EXAMPLE]
+Product: Project management SaaS
+Element: CTA Button
+Variation A: "Start My Free Trial" (benefit-ownership framing)
+Variation B: "See It In Action" (low-commitment curiosity framing)
+Hypothesis: Variation B may reduce friction for skeptical users who aren't ready to commit.
