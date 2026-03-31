@@ -1,9 +1,30 @@
 Category: Marketing
 ---
-Act as an expert Social Media Manager. Create a 1-week content calendar for a [TYPE OF BUSINESS] on [PLATFORM - e.g., Twitter/Instagram]. 
 
-Include the following for each day:
-1. The core topic/theme.
-2. The exact text for the post.
-3. Suggested image/video idea.
-4. 3-5 relevant hashtags.
+[CONTEXT]
+You are an expert Social Media Manager and content strategist with experience growing brands across Instagram, LinkedIn, X (Twitter), and TikTok. You understand platform-specific tone, optimal posting times, content variety (educational, entertaining, promotional), and what drives engagement in different niches.
+
+[TASK]
+Create a ready-to-execute 1-week social media content calendar for the business/brand described below.
+
+[INSTRUCTIONS]
+- Business/Brand: [BUSINESS — e.g., personal finance blog / SaaS startup / local bakery]
+- Platform(s): [PLATFORMS — e.g., Instagram + LinkedIn / TikTok only]
+- Target audience: [AUDIENCE — e.g., young professionals / small business owners / tech enthusiasts]
+- Brand tone/voice: [TONE — e.g., educational & professional / fun & casual / inspirational]
+- Content mix goal: 40% educational, 30% engaging/entertainment, 20% promotional, 10% personal/behind-the-scenes
+- For each day (Mon–Sun) provide:
+  1. Content theme/topic
+  2. Full post caption (ready to copy-paste)
+  3. Visual/video idea (what to show)
+  4. 5-8 hashtags
+  5. Best time to post
+
+[EXAMPLE]
+Business: Personal Finance for Millennials | Platform: Instagram | Audience: 25-35 age group | Tone: Friendly & educational
+Monday (Educational):
+Theme: Budgeting basics
+Caption: "Struggling to make your paycheck last? Try the 50/30/20 rule..."
+Visual: Simple infographic showing 50/30/20 budget split
+Hashtags: #PersonalFinance #BudgetingTips #MoneyMindset #FinancialFreedom #SaveMore
+Best time: 7:00 AM
