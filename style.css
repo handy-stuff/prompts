@@ -4,7 +4,7 @@
     --card-bg: #ffffff;
     --border-color: #ddd;
     
-    /* BUTTON COLORS UPDATED */
+    /* BUTTON COLORS */
     --btn-blue: #2196F3;
     --btn-blue-hover: #1976D2;
     --btn-green: #4CAF50; 
@@ -49,7 +49,7 @@ input[type="text"] {
     margin: 0 auto;
     padding: 2rem;
     gap: 2rem;
-    align-items: flex-start; /* Required for sticky sidebar */
+    align-items: flex-start; 
 }
 
 /* --- SIDEBAR STYLES --- */
@@ -62,20 +62,12 @@ input[type="text"] {
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     
-    /* Makes it sticky when scrolling down */
     position: sticky;
     top: 2rem; 
 }
 
-.sidebar-header h3 {
-    margin: 0 0 5px 0;
-}
-
-.sidebar-hint {
-    font-size: 0.8rem;
-    color: #888;
-    margin: 0 0 15px 0;
-}
+.sidebar-header h3 { margin: 0 0 5px 0; }
+.sidebar-hint { font-size: 0.8rem; color: #888; margin: 0 0 15px 0; }
 
 .category-list {
     display: flex;
@@ -101,7 +93,16 @@ input[type="text"] {
 /* --- MAIN CONTENT & GRID --- */
 main {
     flex-grow: 1;
-    min-width: 0; /* Prevents flexbox from blowing out */
+    min-width: 0; 
+}
+
+.prompt-count {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* EXACTLY 3 COLUMNS */
@@ -186,9 +187,9 @@ main {
 .prompt-text::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
 .prompt-text::-webkit-scrollbar-thumb:hover { background: #888; }
 
-/* --- UPDATED BUTTON COLORS --- */
+/* --- BUTTON STYLES --- */
 .copy-btn {
-    background-color: var(--btn-blue); /* BLUE DEFAULT */
+    background-color: var(--btn-blue);
     color: white;
     border: none;
     padding: 12px;
@@ -201,4 +202,4 @@ main {
 }
 
 .copy-btn:hover { background-color: var(--btn-blue-hover); }
-.copy-btn.copied { background-color: var(--btn-green) !important; /* GREEN ON SUCCESS */ }
+.copy-btn.copied { background-color: var(--btn-green) !important; }
