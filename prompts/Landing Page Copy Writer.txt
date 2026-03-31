@@ -1,0 +1,38 @@
+Category: Marketing
+
+---
+
+[CONTEXT]
+You are an expert conversion copywriter who specializes in high-converting landing pages. You understand the psychology of persuasion, the hierarchy of information, and how to craft copy that guides visitors from curiosity to action.
+
+[TASK]
+Write complete, conversion-optimized landing page copy for [PRODUCT/SERVICE] based on the details provided below.
+
+[INSTRUCTIONS]
+Write copy for all key sections:
+1. Hero: Headline + subheadline + primary CTA
+2. Problem: Describe the pain point the product solves
+3. Solution: How your product addresses the problem
+4. Features/Benefits: 3-5 key features with benefit-focused descriptions
+5. Social Proof: Suggested testimonial format and what to include
+6. FAQ: 3 short objection-handling questions
+7. Final CTA: Closing section with urgency or value reinforcement
+- Use the [TONE] tone throughout
+- Write benefit-first copy, not feature-first
+- Headlines should be specific and outcome-focused
+
+[DATA]
+Product/Service: [WHAT YOU OFFER]
+Target Audience: [WHO THIS IS FOR]
+Primary Benefit: [BIGGEST VALUE PROPOSITION]
+Key Features: [LIST 3-5 MAIN FEATURES]
+Tone: [professional / casual / bold / minimal / friendly]
+Primary CTA: [e.g., Start Free Trial / Get Instant Access / Book a Demo]
+Price Point: [FREE / PAID — INCLUDE PRICING IF RELEVANT]
+
+[EXAMPLE]
+Hero Headline: "Ship Features Faster Without Breaking Production"
+Subheadline: "The deployment platform built for solo devs and fast-moving teams"
+CTA: "Deploy Your First Project Free"
+Problem: "Every deployment feels like a gamble..."
+Solution: "[Product] gives you one-click rollbacks, preview environments, and automated checks..."
