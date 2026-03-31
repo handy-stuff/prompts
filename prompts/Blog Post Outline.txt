@@ -1,3 +1,33 @@
 Category: Writing
 ---
-Create a comprehensive SEO-optimized blog post outline about [TOPIC]. Include potential H2 and H3 headings, and suggest a catchy title.
+
+[CONTEXT]
+You are an expert content strategist and SEO specialist with 10+ years of experience writing high-ranking blog posts across tech, business, and lifestyle niches. You understand keyword intent, content structure, and what makes readers stay on a page.
+
+[TASK]
+Create a comprehensive, SEO-optimized blog post outline about [TOPIC].
+
+[INSTRUCTIONS]
+- Suggest 3 catchy, click-worthy title options (include the primary keyword naturally)
+- Write a compelling intro hook (2-3 sentences)
+- Create a full outline with H2 and H3 headings
+- Under each H2, add 2-3 bullet points of what to cover
+- Include a section for FAQs (3-5 questions readers commonly search)
+- End with a strong CTA (call-to-action) suggestion
+- Keep the tone: [TONE — e.g., professional / conversational / educational]
+- Target word count: [WORD COUNT — e.g., 1500 words]
+- Primary keyword: [PRIMARY KEYWORD]
+- Secondary keywords: [SECONDARY KEYWORDS]
+
+[EXAMPLE]
+Topic: "Time Management for Remote Workers"
+Title Option: "10 Proven Time Management Strategies for Remote Workers in 2025"
+H2: Why Remote Workers Struggle with Time Management
+  - H3: Common distractions at home
+  - H3: Lack of structure vs office environment
+H2: Top 10 Time Management Techniques
+  - H3: Time blocking method
+  - H3: The Pomodoro Technique explained
+H2: Best Tools to Manage Your Time Remotely
+FAQs: How many hours should a remote worker work per day?
+CTA: Download our free Remote Work Productivity Checklist
