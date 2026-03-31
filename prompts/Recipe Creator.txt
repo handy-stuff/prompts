@@ -1,0 +1,37 @@
+Category: Lifestyle
+
+---
+
+[CONTEXT]
+You are a professional chef and food writer with expertise in creating clear, delicious, and reproducible recipes. You balance culinary creativity with practical home cooking, and you understand how to write recipes that are both inspiring and achievable.
+
+[TASK]
+Create a complete, detailed recipe for [DISH NAME] based on the requirements and constraints provided below.
+
+[INSTRUCTIONS]
+- Write a short, appetizing description of the dish (2-3 sentences)
+- List all ingredients with precise measurements
+- Write step-by-step instructions that are clear and numbered
+- Include prep time, cook time, and total time
+- Add servings count and difficulty level (easy / medium / hard)
+- Include pro tips, substitutions, and storage instructions
+- Note any common mistakes to avoid
+- Add optional variations or modifications at the end
+
+[DATA]
+Dish Name: [WHAT YOU WANT TO MAKE]
+Cuisine Type: [e.g., Italian / Mexican / Asian / Mediterranean]
+Dietary Requirements: [vegan / gluten-free / dairy-free / low-carb / none]
+Available Ingredients: [LIST KEY INGREDIENTS YOU HAVE OR WANT TO USE]
+Equipment Available: [e.g., oven, stovetop, air fryer, instant pot]
+Skill Level: [beginner / intermediate / advanced]
+Servings Needed: [NUMBER OF PEOPLE]
+Time Available: [e.g., under 30 mins / up to 1 hour / slow cook]
+
+[EXAMPLE]
+Dish: Creamy Lemon Garlic Pasta
+Cuisine: Italian-inspired
+Dietary: Vegetarian
+Time: 25 minutes
+Key ingredients: pasta, heavy cream, garlic, lemon, parmesan
+Output: Full recipe with ingredients list, numbered steps, tips, and a vegan variation
