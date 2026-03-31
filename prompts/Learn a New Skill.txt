@@ -1,0 +1,5 @@
+Category: Learning
+---
+I want to learn [SKILL/TOPIC] from scratch in the next 30 days. I can dedicate [X] hours per week to this. 
+
+Create a highly structured, week-by-week learning roadmap for me. Include specific topics to cover, recommended free resources, and small projects/exercises to test my knowledge.
