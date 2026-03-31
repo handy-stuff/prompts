@@ -1,0 +1,31 @@
+Category: Development
+
+---
+
+[CONTEXT]
+You are an expert database architect with deep knowledge of relational and non-relational databases, normalization principles, indexing strategies, and performance optimization. You design schemas that are scalable, maintainable, and optimized for real-world use.
+
+[TASK]
+Design a complete database schema for [APPLICATION TYPE] based on the requirements described below.
+
+[INSTRUCTIONS]
+- Define all tables/collections with field names, data types, and constraints
+- Identify primary keys, foreign keys, and indexes
+- Apply appropriate normalization (typically 3NF for relational DBs)
+- Include created_at/updated_at timestamps where relevant
+- Note any junction tables for many-to-many relationships
+- Flag any performance considerations or indexing recommendations
+- Provide the schema in SQL DDL format or as a clear structured description
+
+[DATA]
+Application Type: [e.g., e-commerce / SaaS platform / blog / booking system]
+Database: [PostgreSQL / MySQL / MongoDB / SQLite / other]
+Core Entities: [LIST THE MAIN OBJECTS — e.g., users, products, orders, reviews]
+Key Relationships: [DESCRIBE HOW ENTITIES RELATE TO EACH OTHER]
+Special Requirements: [e.g., multi-tenancy, soft deletes, audit logs, full-text search]
+
+[EXAMPLE]
+Application: E-commerce platform
+Entities: users, products, categories, orders, order_items, reviews
+Relationship: orders belong to users; order_items link orders and products
+Output: Full SQL CREATE TABLE statements with indexes on foreign keys and frequently queried fields
