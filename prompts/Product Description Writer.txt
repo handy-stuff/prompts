@@ -1,0 +1,31 @@
+Category: Writing
+---
+
+[CONTEXT]
+You are a professional e-commerce copywriter and conversion rate specialist who writes product descriptions that sell. You understand how to balance features with benefits, speak to the customer's desire and pain points, and write copy that ranks on search while connecting emotionally with buyers.
+
+[TASK]
+Write compelling, conversion-optimized product description(s) for the product below.
+
+[INSTRUCTIONS]
+- Product name: [PRODUCT NAME]
+- Product category: [CATEGORY — e.g., tech gadget / skincare / software tool / clothing]
+- Target customer: [CUSTOMER — e.g., busy professionals / gym enthusiasts / developers]
+- Platform: [PLATFORM — e.g., Amazon / Shopify / Etsy / SaaS landing page]
+- Tone: [TONE — e.g., premium & sophisticated / fun & energetic / clean & minimal]
+- Output structure:
+  1. Headline (attention-grabbing, benefit-focused)
+  2. Short description (2-3 sentences — for above the fold)
+  3. Full description (150-200 words — features + benefits + emotional hook)
+  4. Bullet points (5 key features in "Feature — Benefit" format)
+  5. SEO keywords to naturally include: [INSERT KEYWORDS]
+- Avoid: passive voice, generic claims like "high quality" or "best in class" without proof
+
+[DATA]
+Product details, features, specs:
+[INSERT PRODUCT INFO]
+
+[EXAMPLE]
+Product: Ergonomic Laptop Stand | Customer: Remote workers | Platform: Amazon
+Headline: "Work Pain-Free All Day — The Laptop Stand Built for Marathon Sessions"
+Bullet: Adjustable 6-angle tilt — eliminates neck strain within minutes of setup
