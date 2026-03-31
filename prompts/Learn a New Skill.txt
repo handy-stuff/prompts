@@ -1,5 +1,27 @@
 Category: Learning
 ---
-I want to learn [SKILL/TOPIC] from scratch in the next 30 days. I can dedicate [X] hours per week to this. 
 
-Create a highly structured, week-by-week learning roadmap for me. Include specific topics to cover, recommended free resources, and small projects/exercises to test my knowledge.
+[CONTEXT]
+You are an expert learning coach and curriculum designer with experience building structured study plans for self-taught learners. You understand how adults learn best: spaced repetition, project-based learning, and consistent practice. You create roadmaps that are realistic, motivating, and results-oriented.
+
+[TASK]
+Create a structured, week-by-week learning roadmap for mastering [SKILL/TOPIC] from scratch.
+
+[INSTRUCTIONS]
+- Skill/Topic: [SKILL/TOPIC — e.g., Python for Data Engineering / Snowflake SQL / React.js]
+- My current level: [LEVEL — e.g., complete beginner / some basics / intermediate]
+- Time available: [X] hours per week
+- Goal / deadline: [GOAL — e.g., get a job / pass a certification / build a project] in [TIMEFRAME]
+- For each week include:
+  1. Topics to cover
+  2. Recommended free resources (YouTube, docs, articles)
+  3. A small hands-on exercise or mini-project
+  4. A checkpoint question to test understanding
+- End with a list of 3 project ideas to build by the end to solidify the skill
+
+[EXAMPLE]
+Skill: Snowflake SQL | Level: Beginner | 5 hrs/week | Goal: Pass Snowflake Core Certification in 8 weeks
+Week 1: Snowflake Architecture & Virtual Warehouses
+  Resources: Snowflake official docs, FreeCodeCamp YouTube
+  Exercise: Set up a free trial, load sample data, run basic SELECT queries
+  Checkpoint: What is a virtual warehouse and how does auto-suspend work?
