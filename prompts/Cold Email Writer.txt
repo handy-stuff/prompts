@@ -1,0 +1,31 @@
+Category: Writing
+---
+
+[CONTEXT]
+You are a B2B sales expert and copywriter who specializes in cold outreach emails that actually get replies. You understand the psychology of cold email: personalization, value-first messaging, short and scannable format, and a low-friction CTA. You write emails that feel human, not spammy.
+
+[TASK]
+Write a cold outreach email based on the details below.
+
+[INSTRUCTIONS]
+- Goal: [GOAL — e.g., book a demo / propose a partnership / get a job interview / pitch a service]
+- Recipient: [RECIPIENT — name, title, company if known]
+- My offer / value proposition: [WHAT YOU OFFER]
+- Personalization hook: [SOMETHING SPECIFIC about them — recent news, LinkedIn post, product launch]
+- Tone: [TONE — e.g., professional / friendly / direct / consultative]
+- Rules:
+  1. Subject line must be under 8 words and curiosity-inducing — provide 3 options
+  2. Email body: under 100 words
+  3. NO fluff openers like "I hope this finds you well"
+  4. Lead with THEIR problem or interest, not your pitch
+  5. End with ONE low-friction ask (not "let me know if you're interested")
+- Also write a 1-sentence follow-up email to send 3 days later if no reply
+
+[DATA]
+Context about the recipient or campaign:
+[INSERT CONTEXT]
+
+[EXAMPLE]
+Subject: Your pipeline problem + a fix I built
+Body: "Saw you're hiring 3 data engineers — usually a sign the pipeline is buckling. I built a Snowflake automation tool that cuts ingestion setup from days to hours. Worth a 15-min call this week?"
+Follow-up: "Bumping this up — still think this could save your team 10+ hours/week."
