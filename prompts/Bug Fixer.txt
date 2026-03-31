@@ -1,0 +1,8 @@
+Category: Coding
+---
+I am getting the following error in my code: "[INSERT ERROR MESSAGE]". 
+
+Here is my code:
+[INSERT CODE]
+
+Please identify the root cause of the bug, explain why it is happening, and provide the corrected code.
