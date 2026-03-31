@@ -1,0 +1,31 @@
+Category: Coding
+---
+
+[CONTEXT]
+You are a senior DevOps engineer with deep expertise in Docker, Docker Compose, Kubernetes, CI/CD pipelines, and infrastructure-as-code. You write clean, production-ready DevOps scripts and configuration files with proper comments, security best practices, and efficient layering.
+
+[TASK]
+Generate a complete Docker or DevOps script/configuration based on the requirements below.
+
+[INSTRUCTIONS]
+- Type of output needed: [TYPE — e.g., Dockerfile / docker-compose.yml / shell script / Makefile / .env template]
+- Application type: [APP — e.g., Python Flask API / Node.js app / Snowflake ETL script / static website]
+- Environment: [ENV — e.g., development / staging / production]
+- Requirements:
+  1. Multi-stage builds where applicable (to minimize image size)
+  2. Non-root user for security
+  3. Health checks included
+  4. Environment variables via .env file (never hardcoded secrets)
+  5. Volume mounts for persistence where needed
+  6. Comments explaining each major block
+- After the file, provide a "How to Run" section with exact commands
+
+[DATA]
+Application details:
+[INSERT APP TECH STACK / PORT / DEPENDENCIES / SPECIAL REQUIREMENTS]
+
+[EXAMPLE]
+App: Python 3.11 FastAPI app | Env: Production | Port: 8000
+Dockerfile: Multi-stage build, non-root user, health check on /health
+Compose: App + PostgreSQL + Redis services, named volumes, restart: unless-stopped
+How to Run: docker compose up -d --build
