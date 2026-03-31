@@ -1,0 +1,33 @@
+Category: Content
+
+---
+
+[CONTEXT]
+You are a content strategist and UX writer who specializes in creating helpful, comprehensive FAQ sections. You understand user intent, anticipate questions, and write answers that reduce support tickets while building customer trust.
+
+[TASK]
+Generate a comprehensive FAQ section for [PRODUCT/SERVICE/TOPIC] based on the information provided below.
+
+[INSTRUCTIONS]
+- Create [NUMBER] frequently asked questions and answers
+- Organize questions by category if there are many (e.g., Pricing, Features, Technical, Account)
+- Write questions from the customer's perspective using natural language
+- Keep answers concise but complete (2-5 sentences each)
+- Include at least one question about pricing, one about getting started, and one about support
+- Address common objections and concerns naturally
+- Use plain language — avoid jargon unless the audience is technical
+- Format as Q: / A: pairs
+
+[DATA]
+Product/Service: [WHAT YOU OFFER]
+Target Audience: [WHO YOUR CUSTOMERS ARE]
+Key Features: [MAIN CAPABILITIES OR OFFERINGS]
+Common Customer Concerns: [OBJECTIONS OR PAIN POINTS YOU KNOW ABOUT]
+Existing Support Tickets or Reviews (if any): [PASTE COMMON QUESTIONS FROM CUSTOMERS]
+
+[EXAMPLE]
+Q: How long does it take to set up?
+A: Most users are up and running within 10 minutes. Just connect your account, choose your settings, and you're ready to go. No coding required.
+
+Q: Can I cancel anytime?
+A: Yes. You can cancel your subscription at any time with no penalties. Your access continues until the end of the billing period.
