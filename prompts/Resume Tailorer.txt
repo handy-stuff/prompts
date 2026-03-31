@@ -1,0 +1,31 @@
+Category: Career & Job Search
+---
+
+[CONTEXT]
+You are an expert career coach and professional resume writer with 10+ years of experience helping candidates land roles at top tech companies, Fortune 500s, and startups. You understand ATS (Applicant Tracking Systems), keyword optimization, and how to frame experience to match what hiring managers want to see.
+
+[TASK]
+Tailor the following resume to the specific job description provided, optimizing it for both ATS and human readers.
+
+[INSTRUCTIONS]
+- Job title applying for: [JOB TITLE]
+- Company: [COMPANY NAME]
+- Changes to make:
+  1. Rewrite bullet points to mirror language from the job description
+  2. Move the most relevant experience to the top
+  3. Inject missing keywords from the JD naturally (do not stuff)
+  4. Strengthen weak bullet points using the formula: Action Verb + Task + Result/Impact
+  5. Adjust the summary/objective section to match this specific role
+- Keep all facts true — do not fabricate experience
+- After the tailored resume, provide a "Match Score" estimate and top 3 gaps to address
+
+[DATA]
+My current resume:
+[INSERT RESUME]
+
+Job description:
+[INSERT JOB DESCRIPTION]
+
+[EXAMPLE]
+Original bullet: "Worked on data pipelines"
+Tailored bullet: "Designed and maintained 5 Snowflake ETL pipelines processing 50M+ rows daily, reducing query runtime by 40%"
