@@ -1,44 +1,60 @@
 // 1. ADD YOUR TEXT FILE NAMES HERE
 const promptFiles = [
-    // ── Original 9 (upgraded) ──
-    "Blog Post Outline.txt",
-    "Bug Fixer.txt",
-    "Code Explainer.txt",
-    "Code Reviewer.txt",
-    "Email Polisher.txt",
-    "Learn a New Skill.txt",
-    "Meeting Summarizer.txt",
-    "Midjourney Portrait.txt",
-    "Social Media Calendar.txt",
-
-    // ── Coding & Dev ──
-    "Code Refactorer.txt",
-    "Unit Test Generator.txt",
-    "API Documentation Writer.txt",
-    "README Generator.txt",
-    "Git Commit Message Generator.txt",
-
-    // ── Data & Analytics ──
-    "SQL Query Builder.txt",
-    "Snowflake Schema Builder.txt",
-
-    // ── AI & Prompt Engineering ──
-    "Prompt Improver.txt",
-    "System Prompt Builder.txt",
-
-    // ── Writing ──
-    "Cold Email Writer.txt",
-    "LinkedIn Post Generator.txt",
-
-    // ── Career & Job Search ──
-    "Resume Tailorer.txt",
-    "Cover Letter Writer.txt",
-    "Interview Prep Coach.txt",
-
-    // ── Automation & Tools ──
-    "Python Script Generator.txt",
-    "GitHub Actions Workflow Builder.txt"
+  "AB Test Copy Writer.txt",
+  "API Documentation Writer.txt",
+  "Blog Post Outline.txt",
+  "Bug Fixer.txt",
+  "Changelog Generator.txt",
+  "Code Explainer.txt",
+  "Code Refactorer.txt",
+  "Code Reviewer.txt",
+  "Cold Email Writer.txt",
+  "Cover Letter Writer.txt",
+  "Customer Persona Builder.txt",
+  "Data Analysis Assistant.txt",
+  "Database Schema Designer.txt",
+  "Docker DevOps Script Helper.txt",
+  "Email Polisher.txt",
+  "Essay Writer.txt",
+  "FAQ Generator.txt",
+  "Git Commit Message Generator.txt",
+  "GitHub Actions Workflow Builder.txt",
+  "Interview Prep Coach.txt",
+  "Job Description Writer.txt",
+  "Landing Page Copy Writer.txt",
+  "Learn a New Skill.txt",
+  "LinkedIn Post Generator.txt",
+  "Meeting Summarizer.txt",
+  "Midjourney Portrait.txt",
+  "Negotiation Script.txt",
+  "Newsletter Writer.txt",
+  "Onboarding Email Sequence.txt",
+  "Performance Review Writer.txt",
+  "Pitch Deck Outliner.txt",
+  "Press Release Writer.txt",
+  "Product Description Writer.txt",
+  "Prompt Improver.txt",
+  "Python Script Generator.txt",
+  "README Generator.txt",
+  "Recipe Creator.txt",
+  "Regex Pattern Generator.txt",
+  "Resume Tailorer.txt",
+  "SEO Content Brief.txt",
+  "SQL Query Builder.txt",
+  "Slack Message Drafter.txt",
+  "Snowflake Schema Builder.txt",
+  "Social Media Calendar.txt",
+  "Storytelling Fiction Writer.txt",
+  "System Prompt Builder.txt",
+  "Terraform IaC Generator.txt",
+  "Travel Itinerary Planner.txt",
+  "Unit Test Generator.txt",
+  "User Story Writer.txt",
+  "Video Script Writer.txt",
+  "Weekly Planner.txt",
+  "Workout Plan Generator.txt"
 ];
+
 
 let prompts = []; 
 
