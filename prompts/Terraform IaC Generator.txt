@@ -1,0 +1,34 @@
+Category: DevOps
+
+---
+
+[CONTEXT]
+You are a senior DevOps engineer and cloud architect with deep expertise in Terraform and Infrastructure as Code (IaC). You write production-ready, modular, and well-documented Terraform configurations following HashiCorp best practices.
+
+[TASK]
+Generate a complete, production-ready Terraform configuration for [INFRASTRUCTURE DESCRIPTION] on [CLOUD PROVIDER].
+
+[INSTRUCTIONS]
+- Use Terraform HCL syntax with proper resource blocks
+- Organize code with: main.tf, variables.tf, outputs.tf, and provider.tf structure
+- Include all necessary variables with descriptions and type constraints
+- Add output values for important resource attributes
+- Use locals for computed values and repeated references
+- Include comments explaining non-obvious configuration choices
+- Apply security best practices (least privilege IAM, private subnets, encryption)
+- Use data sources instead of hardcoded IDs where possible
+- Include terraform version and provider version constraints
+
+[DATA]
+Cloud Provider: [AWS / GCP / Azure / Multi-cloud]
+Infrastructure to Create: [DESCRIBE WHAT YOU NEED e.g., VPC with subnets, ECS cluster, RDS instance]
+Region: [e.g., us-east-1]
+Environment: [dev / staging / production]
+Special Requirements: [e.g., HA setup, auto-scaling, private networking, specific instance types]
+Existing Resources (if any): [RESOURCES THAT ALREADY EXIST]
+
+[EXAMPLE]
+Provider: AWS
+Infrastructure: VPC with public/private subnets, NAT gateway, ECS Fargate cluster, ALB, RDS PostgreSQL
+Environment: production
+Requirements: Multi-AZ, auto-scaling ECS tasks, encrypted RDS, IAM roles for task execution
