@@ -23,19 +23,31 @@
                 <p class="sidebar-hint">Select one or multiple</p>
             </div>
             <div id="category-list" class="category-list">
-                <!-- Checkboxes will be generated here by JavaScript -->
+                <!-- Checkboxes will be generated here -->
             </div>
         </aside>
 
         <!-- MAIN PROMPT GRID -->
         <main>
-            <!-- DYNAMIC COUNTER -->
             <div id="prompt-count" class="prompt-count"></div>
             
             <div id="prompt-grid" class="grid-container">
                 <p>Loading prompts...</p>
             </div>
         </main>
+    </div>
+
+    <!-- FULL SCREEN POP-UP (MODAL) ON THE SAME PAGE -->
+    <div id="prompt-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Prompt Title</h2>
+                <span id="modal-category" class="category-tag">Category</span>
+            </div>
+            <div id="modal-text" class="single-prompt-text">Prompt text goes here...</div>
+            <button id="modal-copy-btn" class="copy-btn" style="width: 100%;">Copy Full Prompt</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
