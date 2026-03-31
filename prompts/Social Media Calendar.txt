@@ -1,0 +1,9 @@
+Category: Marketing
+---
+Act as an expert Social Media Manager. Create a 1-week content calendar for a [TYPE OF BUSINESS] on [PLATFORM - e.g., Twitter/Instagram]. 
+
+Include the following for each day:
+1. The core topic/theme.
+2. The exact text for the post.
+3. Suggested image/video idea.
+4. 3-5 relevant hashtags.
