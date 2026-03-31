@@ -3,7 +3,14 @@
 const promptFiles = [
     "Code Reviewer.txt",
     "Blog Post Outline.txt",
-    "Daily Planner.txt"
+    "Code Explainer.txt",
+    "Bug Fixer.txt",
+    "Meeting Summarizer.txt",
+    "Email Polisher.txt",
+    "Learn a New Skill.txt",
+    "Social Media Calendar.txt",
+    "Midjourney Portrait.txt",
+    "SEO Article Writer.txt"
 ];
 
 let prompts = []; // We will store the fetched data here
