@@ -1,0 +1,6 @@
+Category: Productivity
+---
+Please review the following meeting transcript/notes. 
+Provide a concise summary of the discussion, a bulleted list of the main decisions made, and a clear list of Action Items with the assigned person (if mentioned).
+
+[INSERT MEETING NOTES]
