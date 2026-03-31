@@ -160,7 +160,6 @@ function populateCategories() {
 function renderPrompts(promptArray) {
     grid.innerHTML = ''; 
     
-    // --- COUNTER LOGIC ---
     if (prompts.length === 0) {
         countDisplay.innerText = ''; 
     } else if (promptArray.length === prompts.length) {
@@ -169,7 +168,6 @@ function renderPrompts(promptArray) {
         countDisplay.innerText = `Showing ${promptArray.length} of ${prompts.length} prompts`;
     }
     
-    // --- RENDER CARDS ---
     if (promptArray.length === 0) {
         grid.innerHTML = '<p style="grid-column: 1 / -1;">No prompts found matching your criteria.</p>';
         return;
@@ -179,13 +177,17 @@ function renderPrompts(promptArray) {
         const card = document.createElement('div');
         card.className = 'card';
         
+        // ADDED: The .card-actions div and the .view-btn anchor tag!
         card.innerHTML = `
             <div class="card-header">
                 <h3>${prompt.title}</h3>
                 <span class="category-tag">${prompt.category}</span>
             </div>
             <div class="prompt-text">${prompt.text}</div>
-            <button class="copy-btn">Copy Prompt</button>
+            <div class="card-actions">
+                <button class="copy-btn">Copy Prompt</button>
+                <a href="prompt.html?file=${encodeURIComponent(prompt.title)}" class="view-btn" target="_blank" title="Open in new page">➔</a>
+            </div>
         `;
 
         const copyBtn = card.querySelector('.copy-btn');
