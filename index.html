@@ -10,21 +10,30 @@
 
     <header>
         <h1>🤖 My AI Prompt Library</h1>
-        
         <div class="controls">
-            <input type="text" id="searchInput" placeholder="Search prompts...">
-            <select id="categoryFilter">
-                <option value="All">All Categories</option>
-                <!-- Categories will be added here automatically -->
-            </select>
+            <input type="text" id="searchInput" placeholder="Search prompts by title or text...">
         </div>
     </header>
 
-    <main>
-        <div id="prompt-grid" class="grid-container">
-            <p>Loading prompts...</p>
-        </div>
-    </main>
+    <div class="layout-wrapper">
+        <!-- STATIC LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Categories</h3>
+                <p class="sidebar-hint">Select one or multiple</p>
+            </div>
+            <div id="category-list" class="category-list">
+                <!-- Checkboxes will be generated here by JavaScript -->
+            </div>
+        </aside>
+
+        <!-- MAIN PROMPT GRID -->
+        <main>
+            <div id="prompt-grid" class="grid-container">
+                <p>Loading prompts...</p>
+            </div>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
