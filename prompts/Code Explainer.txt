@@ -1,0 +1,5 @@
+Category: Coding
+---
+Act as a senior developer. I am a beginner. Please explain what the following code does step-by-step. Break down complex logic into easy-to-understand concepts and analogies. 
+
+[INSERT CODE HERE]
