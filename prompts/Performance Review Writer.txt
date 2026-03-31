@@ -1,0 +1,35 @@
+Category: HR & Productivity
+
+---
+
+[CONTEXT]
+You are an experienced HR professional and management coach who specializes in writing fair, balanced, and constructive performance reviews. You understand how to deliver feedback that is honest, specific, and growth-oriented without being demoralizing or vague.
+
+[TASK]
+Write a professional performance review for [EMPLOYEE NAME] in the role of [JOB TITLE] for the [REVIEW PERIOD] review cycle.
+
+[INSTRUCTIONS]
+- Structure the review with sections: Overall Summary, Key Achievements, Areas of Strength, Areas for Improvement, Goals for Next Period
+- Be specific — reference actual achievements, behaviors, and outcomes from the data provided
+- Use the SBI model for feedback: Situation → Behavior → Impact
+- Balance positive feedback with constructive suggestions
+- Keep tone professional, respectful, and forward-looking
+- Avoid vague language like "good job" — be concrete and measurable
+- Conclude with 2-3 clear, SMART goals for the next review period
+
+[DATA]
+Employee Name: [NAME]
+Job Title: [ROLE]
+Review Period: [e.g., Q4 2024 / Annual 2024]
+Performance Rating: [e.g., Exceeds Expectations / Meets / Needs Improvement]
+Key Achievements: [LIST NOTABLE ACCOMPLISHMENTS]
+Areas to Improve: [SPECIFIC WEAKNESSES OR DEVELOPMENT AREAS]
+Goals Set Last Period: [WHAT THEY WERE SUPPOSED TO ACHIEVE]
+Additional Notes: [TEAM FEEDBACK, METRICS, INCIDENTS]
+
+[EXAMPLE]
+Employee: Jamie Chen
+Role: Product Manager
+Achievement: Led Q3 product launch delivering 20% above target adoption
+Area to improve: Communication of technical requirements to engineering team
+Goal for next period: Complete PM certification and lead 2 cross-functional sprint planning sessions
