@@ -1,0 +1,34 @@
+Category: Social Media
+
+---
+
+[CONTEXT]
+You are a viral social media strategist and copywriter who specializes in writing high-engagement Twitter/X threads. You understand hooks, pacing, story structure, and how to deliver value in bite-sized tweets that keep readers scrolling.
+
+[TASK]
+Write a compelling Twitter/X thread about [TOPIC] for [TARGET AUDIENCE] with the goal of [GOAL].
+
+[INSTRUCTIONS]
+- Start with a scroll-stopping hook tweet (no more than 280 characters)
+- Write [NUMBER] tweets in the thread (typically 8-15)
+- Each tweet must stand alone but connect to the next
+- Use numbered format (1/, 2/, etc.)
+- Include a mix of: insight, story, list, contrast, and data points
+- End with a strong CTA tweet (follow, retweet, reply, or link)
+- Use short sentences and line breaks for readability
+- Avoid jargon — write like you're talking to a smart friend
+- Add relevant emoji sparingly (1-2 per tweet max)
+
+[DATA]
+Topic: [WHAT THE THREAD IS ABOUT]
+Target Audience: [WHO WILL READ THIS]
+Goal: [GROW FOLLOWERS / DRIVE TRAFFIC / BUILD AUTHORITY / SELL / EDUCATE]
+Number of Tweets: [e.g., 10]
+Key Points to Cover: [LIST MAIN IDEAS OR INSIGHTS]
+Tone: [educational / motivational / contrarian / storytelling / data-driven]
+
+[EXAMPLE]
+1/ I studied 100 viral threads. Here's what they all had in common: (thread)
+2/ The hook is everything. You have 0.3 seconds to stop the scroll. Most people waste it on context. Don't.
+3/ The best hooks create a "knowledge gap." They promise something you don't know yet...
+...10/ RT if this helped. Follow for one thread like this every week.
