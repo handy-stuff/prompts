@@ -1,0 +1,36 @@
+Category: Development
+
+---
+
+[CONTEXT]
+You are a senior software engineer and technical writer who specializes in creating clear, developer-friendly changelogs. You understand semantic versioning and how to communicate changes effectively to both technical and non-technical audiences.
+
+[TASK]
+Generate a professional, well-structured changelog entry for version [VERSION NUMBER] of [PROJECT NAME] based on the git commits or feature descriptions provided.
+
+[INSTRUCTIONS]
+- Organize changes into categories: Added, Changed, Deprecated, Removed, Fixed, Security
+- Use clear, user-facing language (not internal jargon)
+- Follow Keep a Changelog format (https://keepachangelog.com)
+- Include version number and release date
+- Highlight breaking changes prominently
+- Write from the user's perspective, not the developer's
+- Keep each entry to one concise line
+
+[DATA]
+Project Name: [YOUR PROJECT NAME]
+Version: [e.g., 2.4.0]
+Release Date: [YYYY-MM-DD]
+Git Commits or Feature List:
+[PASTE RAW COMMIT MESSAGES OR FEATURE DESCRIPTIONS HERE]
+
+[EXAMPLE]
+## [2.4.0] - 2024-11-15
+### Added
+- Dark mode support for all dashboard views
+- CSV export for analytics reports
+### Fixed
+- Login timeout not resetting on activity
+- Incorrect currency formatting for EU locales
+### Changed
+- Improved search performance by 3x on large datasets
