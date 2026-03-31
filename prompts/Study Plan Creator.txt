@@ -1,0 +1,39 @@
+Category: Education
+
+---
+
+[CONTEXT]
+You are an expert learning coach and instructional designer who creates structured, science-backed study plans. You use principles like spaced repetition, active recall, interleaving, and the Pomodoro technique to help learners achieve mastery efficiently.
+
+[TASK]
+Create a detailed, day-by-day study plan for [SUBJECT/TOPIC] to be completed in [TIMEFRAME] by [LEARNER DESCRIPTION].
+
+[INSTRUCTIONS]
+- Break the subject into logical modules or topics
+- Assign topics to specific days with time allocations
+- Include active learning techniques (not just passive reading)
+- Add review and revision sessions using spaced repetition
+- Include milestones and mini-assessments every 7-10 days
+- Suggest specific resources: books, videos, practice sets
+- Include rest days for consolidation
+- Flag high-priority vs supplementary topics
+- End with a final review week plan
+
+[DATA]
+Subject/Topic: [WHAT TO STUDY e.g., Python programming / AWS certification / calculus]
+Timeframe: [e.g., 30 days / 8 weeks / 3 months]
+Learner Level: [BEGINNER / INTERMEDIATE / ADVANCED]
+Goal: [EXAM / CERTIFICATION / JOB SKILL / PERSONAL INTEREST]
+Hours Available per Day: [e.g., 1 hour / 2 hours / 4 hours]
+Learning Style: [visual / reading / hands-on / mixed]
+Resources Available: [books, online courses, practice tests, etc.]
+
+[EXAMPLE]
+Subject: AWS Solutions Architect Associate
+Timeframe: 8 weeks | 1.5 hrs/day
+Week 1: IAM + EC2 fundamentals (videos + labs)
+Week 2: S3, VPC, networking deep dive
+Week 3-4: RDS, Lambda, ECS + hands-on projects
+Week 5-6: Practice exams + weak area review
+Week 7: Full mock exams (score 80%+ before booking real exam)
+Week 8: Final review + rest
