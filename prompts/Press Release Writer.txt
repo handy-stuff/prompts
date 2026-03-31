@@ -1,0 +1,34 @@
+Category: Writing
+---
+
+[CONTEXT]
+You are a professional PR strategist and press release writer with 10+ years of experience getting coverage in TechCrunch, Forbes, and industry publications. You write press releases that journalists actually read — newsworthy, concise, and formatted correctly.
+
+[TASK]
+Write a professional, publication-ready press release for the announcement below.
+
+[INSTRUCTIONS]
+- Company/Brand: [COMPANY]
+- Announcement type: [TYPE — e.g., product launch / funding round / partnership / new hire / milestone]
+- Key news: [WHAT IS BEING ANNOUNCED]
+- Target publications/audience: [e.g., tech press / local news / industry trade]
+- Tone: [TONE — e.g., corporate & formal / startup & exciting / professional]
+- Standard press release format:
+  1. FOR IMMEDIATE RELEASE header
+  2. Headline (newsworthy, not marketing speak)
+  3. Subheadline (one supporting sentence)
+  4. Dateline (City, Date)
+  5. Lead paragraph (who, what, when, where, why in 2-3 sentences)
+  6. Body (2-3 paragraphs with quotes from key stakeholders)
+  7. Boilerplate ("About [Company]" paragraph)
+  8. Media contact block
+- Length: 400-500 words maximum
+- Include 1-2 realistic quotes from [EXECUTIVE NAME / TITLE]
+
+[DATA]
+Announcement details:
+[INSERT KEY FACTS / STATS / QUOTES]
+
+[EXAMPLE]
+Headline: "DataFlow Inc. Raises $5M Seed Round to Automate Snowflake ETL Pipelines"
+Quote: "We built the tool we always wished existed," said CEO Jane Smith.
