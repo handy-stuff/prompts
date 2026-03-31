@@ -26,7 +26,7 @@ header {
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap; /* Helps on mobile screens */
+    flex-wrap: wrap;
 }
 
 input, select {
@@ -37,24 +37,28 @@ input, select {
     outline: none;
 }
 
-input {
-    width: 300px;
-    max-width: 100%;
-}
+input { width: 300px; max-width: 100%; }
 
 main {
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 1400px; /* Widened to comfortably fit 4 columns */
     margin: 0 auto;
 }
 
+/* --- EXACTLY 4 COLUMNS ON DESKTOP --- */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Forces 4 equal columns. If screen is smaller, it adjusts automatically */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-/* --- UPDATED CARD STYLES --- */
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1100px) { .grid-container { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .grid-container { grid-template-columns: 1fr; } }
+
+/* --- STRICT CARD SIZING --- */
 .card {
     background: var(--card-bg);
     padding: 20px;
@@ -63,13 +67,10 @@ main {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-color);
-    transition: transform 0.2s;
-    height: 420px; /* FIXED HEIGHT FOR ALL CARDS */
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    
+    /* STRICT HEIGHT: 400px total */
+    height: 400px; 
+    box-sizing: border-box;
 }
 
 .card-header {
@@ -77,6 +78,16 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    height: 30px; /* Fixed header height */
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
 }
 
 .category-tag {
@@ -88,63 +99,43 @@ main {
     white-space: nowrap;
 }
 
-.card-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-right: 10px;
-}
-
-/* --- UPDATED PROMPT TEXT STYLES --- */
+/* --- STRICT TEXT BOX (Shows ~12 lines, then scrolls) --- */
 .prompt-text {
     background: var(--bg-color);
     padding: 15px;
     border-radius: 5px;
     font-family: monospace;
     font-size: 0.85rem;
+    line-height: 1.4;
     white-space: pre-wrap;
-    flex-grow: 1;
-    margin-bottom: 15px;
     color: #444;
-    
-    /* SCROLLING MAGIC HAPPENS HERE */
+    margin-bottom: 15px;
+
+    /* MAGIC FIX: This forces the box to obey the card's height and scroll */
+    flex: 1;
+    min-height: 0; 
     overflow-y: auto; 
-    max-height: 100%;
 }
 
-/* Custom Scrollbar for a cleaner look */
-.prompt-text::-webkit-scrollbar {
-    width: 6px;
-}
-.prompt-text::-webkit-scrollbar-track {
-    background: transparent; 
-}
-.prompt-text::-webkit-scrollbar-thumb {
-    background: #ccc; 
-    border-radius: 10px;
-}
-.prompt-text::-webkit-scrollbar-thumb:hover {
-    background: #aaa; 
-}
+/* Custom Scrollbar */
+.prompt-text::-webkit-scrollbar { width: 8px; }
+.prompt-text::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.prompt-text::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
+.prompt-text::-webkit-scrollbar-thumb:hover { background: #888; }
 
+/* --- BUTTON FIX --- */
 .copy-btn {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    height: 45px; /* Fixed button height */
     transition: background 0.2s;
-    margin-top: auto; /* Pushes button to the very bottom */
+    width: 100%;
 }
 
-.copy-btn:hover {
-    background-color: #45a049;
-}
-
-.copy-btn.copied {
-    background-color: #2196F3;
-}
+.copy-btn:hover { background-color: #45a049; }
+.copy-btn.copied { background-color: #2196F3; }
