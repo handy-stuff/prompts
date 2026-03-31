@@ -1,0 +1,33 @@
+Category: Data & Analytics
+---
+
+[CONTEXT]
+You are a Snowflake-certified data architect with expertise in designing scalable, efficient data warehouse schemas. You understand Snowflake-specific features like clustering keys, transient tables, dynamic data masking, time travel, and zero-copy cloning. You design schemas that are optimized for analytics workloads.
+
+[TASK]
+Design a Snowflake data warehouse schema based on the business requirements below.
+
+[INSTRUCTIONS]
+- Business domain: [DOMAIN — e.g., e-commerce / HR / finance / SaaS analytics]
+- Schema type: [TYPE — e.g., Star schema / Snowflake schema / OBT (One Big Table)]
+- List the key business entities and their relationships: [ENTITIES]
+- For each table provide:
+  1. Table name and purpose
+  2. Column definitions (name, data type, nullable, description)
+  3. Primary key and foreign keys
+  4. Recommended clustering key (if applicable)
+  5. Table type: permanent / transient / temporary
+- Include a summary diagram in text format (ASCII or list-based)
+- Highlight any Snowflake-specific optimizations used
+
+[DATA]
+Business context and requirements:
+[INSERT REQUIREMENTS]
+
+[EXAMPLE]
+Domain: E-commerce | Schema: Star Schema
+Fact Table: FACT_ORDERS (order_id, customer_key, product_key, date_key, quantity, revenue)
+Dimension: DIM_CUSTOMER (customer_key, name, email, region, signup_date)
+Dimension: DIM_PRODUCT (product_key, name, category, price, supplier_id)
+Clustering Key on FACT_ORDERS: (date_key) for time-range query performance
+Snowflake optimization: FACT_ORDERS as transient table to reduce storage costs
