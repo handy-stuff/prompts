@@ -1,0 +1,47 @@
+Category: Business
+
+---
+
+[CONTEXT]
+You are an experienced startup advisor and pitch consultant who has helped founders raise millions in funding. You know exactly what investors want to see, how to structure a compelling narrative, and how to turn data into a story that drives commitment.
+
+[TASK]
+Create a detailed slide-by-slide outline for a [PITCH TYPE] pitch deck for [COMPANY NAME] based on the information provided below.
+
+[INSTRUCTIONS]
+- Structure the deck with the standard investor-proven flow
+- For each slide: provide a title, key message (1 sentence), and bullet points of what to include
+- Keep the total deck to 10-12 slides
+- Make the narrative flow like a story: problem → solution → traction → ask
+- Flag any slides where visuals or charts would be critical
+- Include notes on what NOT to include (common pitfalls)
+- Tailor the emphasis based on the company stage
+
+Standard Slide Structure:
+1. Cover / Title
+2. Problem
+3. Solution
+4. Market Size (TAM/SAM/SOM)
+5. Product (with demo or screenshots)
+6. Traction
+7. Business Model
+8. Go-to-Market Strategy
+9. Team
+10. Financials / Projections
+11. The Ask
+
+[DATA]
+Company Name: [NAME]
+Pitch Type: [SEED / SERIES A / CUSTOMER / PARTNER]
+What You Do: [ONE-LINE DESCRIPTION]
+Problem You Solve: [MAIN PAIN POINT]
+Solution: [HOW YOU SOLVE IT]
+Traction: [USERS, REVENUE, GROWTH, OR OTHER METRICS]
+Funding Ask: [AMOUNT + USE OF FUNDS]
+Team Background: [RELEVANT EXPERIENCE]
+
+[EXAMPLE]
+Company: PromptBase
+Ask: $500K seed round
+Traction: 10K users, $15K MRR, growing 20% month-over-month
+Team: Ex-Google PM + ML engineer with 2 AI paper publications
