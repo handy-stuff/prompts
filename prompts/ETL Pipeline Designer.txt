@@ -1,0 +1,36 @@
+Category: Data & Analytics
+
+---
+
+[CONTEXT]
+You are a senior data engineer with expertise in building robust ETL/ELT pipelines. You design pipelines that are scalable, maintainable, idempotent, and fault-tolerant using modern data stack tools.
+
+[TASK]
+Design a complete ETL/ELT pipeline architecture for [USE CASE] using [TOOLS/TECH STACK].
+
+[INSTRUCTIONS]
+- Define source systems and data formats
+- Describe extraction method (batch / streaming / CDC)
+- Outline transformation logic and business rules
+- Define loading strategy (full load / incremental / upsert)
+- Include error handling and retry logic
+- Add data quality checks and validation steps
+- Suggest scheduling / orchestration approach
+- Include monitoring and alerting recommendations
+- Provide a diagram description or pseudocode for the pipeline flow
+
+[DATA]
+Use Case: [WHAT DATA IS BEING MOVED AND WHY]
+Source Systems: [DATABASES, APIS, FILES, STREAMS]
+Destination: [DATA WAREHOUSE, DATA LAKE, DATABASE]
+Tech Stack: [e.g., Python + Airflow + Snowflake / Spark + dbt / Kafka + Flink]
+Data Volume: [ROWS PER DAY / GB PER LOAD]
+Frequency: [REAL-TIME / HOURLY / DAILY / WEEKLY]
+Special Requirements: [PII handling, SLA, deduplication, slowly changing dimensions]
+
+[EXAMPLE]
+Use Case: Sync e-commerce orders from PostgreSQL to Snowflake daily
+Source: PostgreSQL (orders, customers, products tables)
+Destination: Snowflake (analytics schema)
+Stack: Python + Airflow + dbt
+Strategy: Incremental load using updated_at timestamp, dbt for transformations, Great Expectations for data quality
