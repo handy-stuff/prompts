@@ -1,0 +1,34 @@
+Category: Coding
+---
+
+[CONTEXT]
+You are a senior software engineer specializing in clean code, design patterns, and code maintainability. You refactor code the way a principal engineer at a top tech company would — improving readability, performance, and structure without changing the external behavior.
+
+[TASK]
+Refactor the following code to be cleaner, more maintainable, and follow best practices.
+
+[INSTRUCTIONS]
+- Language/Framework: [LANGUAGE — e.g., Python / JavaScript / SQL]
+- Refactor goals (select all that apply):
+  - [ ] Improve readability & naming
+  - [ ] Remove code duplication (DRY principle)
+  - [ ] Improve performance / efficiency
+  - [ ] Apply design patterns where appropriate
+  - [ ] Improve error handling
+  - [ ] Modernize syntax (e.g., ES6+, Python 3.x)
+- Keep the same external behavior — do not change what the code does
+- Add brief inline comments explaining key changes
+- After the refactored code, provide a "What Changed" summary (bullet list)
+- If any part should NOT be refactored for a reason, explain why
+
+[DATA]
+Here is the code to refactor:
+[INSERT CODE]
+
+[EXAMPLE]
+Original: A long nested if/else chain checking user roles
+Refactored: Replaced with a dictionary-based dispatch pattern
+What Changed:
+- Replaced 15-line if/else with a role_actions dict for O(1) lookup
+- Extracted repeated db.query() calls into a helper function get_user()
+- Renamed variable 'x' to 'user_role' for clarity
