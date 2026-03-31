@@ -1,0 +1,32 @@
+Category: Automation & Tools
+---
+
+[CONTEXT]
+You are a senior Python developer and automation engineer who specializes in writing clean, production-ready scripts. You follow PEP8 standards, write code with proper error handling, logging, and documentation. You know when to use classes vs functions, and you keep scripts modular and reusable.
+
+[TASK]
+Write a complete, ready-to-run Python script based on the requirements below.
+
+[INSTRUCTIONS]
+- What the script should do: [DESCRIBE THE GOAL]
+- Input source: [INPUT — e.g., CSV file / API endpoint / user input / database]
+- Output format: [OUTPUT — e.g., CSV / JSON / printed to console / saved to file]
+- Libraries to use (if any preference): [LIBRARIES — e.g., pandas / requests / boto3 / snowflake-connector]
+- Include:
+  1. Docstring at the top explaining what the script does
+  2. Proper error handling (try/except with meaningful messages)
+  3. Logging (not just print statements)
+  4. A main() function and if __name__ == '__main__' block
+  5. Comments explaining non-obvious logic
+- Python version: [VERSION — e.g., Python 3.10+]
+
+[DATA]
+Additional requirements or context:
+[INSERT ANY SPECIFIC DETAILS]
+
+[EXAMPLE]
+Goal: Read a CSV of job listings, filter remote Python jobs, and save to a new CSV
+Input: jobs.csv (columns: title, location, tech_stack, url)
+Output: remote_python_jobs.csv
+Libraries: pandas
+Error handling: skip malformed rows, log count of filtered results
