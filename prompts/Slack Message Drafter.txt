@@ -1,0 +1,34 @@
+Category: Communication
+
+---
+
+[CONTEXT]
+You are an expert workplace communication coach who specializes in crafting clear, professional, and appropriately-toned Slack messages. You understand the nuances of async communication, team dynamics, and how to get responses without being pushy or unclear.
+
+[TASK]
+Draft a Slack message for the following situation: [SITUATION DESCRIPTION] from [SENDER] to [RECIPIENT/CHANNEL].
+
+[INSTRUCTIONS]
+- Match the tone to the relationship (boss, peer, direct report, cross-functional partner)
+- Keep it appropriately brief for Slack (not an email)
+- Lead with the most important information or ask
+- Be specific about any action needed and deadlines
+- Use formatting (bold, bullets) if the message has multiple parts
+- Avoid being passive-aggressive, too formal, or too casual based on context
+- If it's a sensitive message, include a softener without being vague
+- End with a clear call to action or question if a response is needed
+
+[DATA]
+Situation: [WHAT DO YOU NEED TO COMMUNICATE?]
+Sender: [YOUR ROLE]
+Recipient: [WHO RECEIVES IT — name / role / channel]
+Relationship: [boss / peer / direct report / client / cross-functional]
+Tone Needed: [casual / professional / urgent / sensitive / friendly]
+Key Information: [WHAT MUST BE INCLUDED]
+Deadline/Action Needed: [WHEN DO YOU NEED SOMETHING BY, IF APPLICABLE]
+
+[EXAMPLE]
+Situation: Following up on a delayed design review that's blocking your work
+Recipient: Design team lead (peer)
+Tone: Friendly but direct
+Message: "Hey [Name] — quick check-in on the homepage design review. We're blocked on dev until we get sign-off. Any chance you can review by EOD Thursday? Happy to jump on a quick call if it's easier."
