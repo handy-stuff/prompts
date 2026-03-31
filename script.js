@@ -9,8 +9,7 @@ const promptFiles = [
     "Email Polisher.txt",
     "Learn a New Skill.txt",
     "Social Media Calendar.txt",
-    "Midjourney Portrait.txt",
-    "SEO Article Writer.txt"
+    "Midjourney Portrait.txt"
 ];
 
 let prompts = []; // We will store the fetched data here
