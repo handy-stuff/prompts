@@ -68,16 +68,6 @@ const searchInput = document.getElementById('searchInput');
 const categoryList = document.getElementById('category-list');
 const countDisplay = document.getElementById('prompt-count');
 
-// --- MODAL ELEMENTS ---
-const modalOverlay = document.getElementById('prompt-modal');
-const closeModalBtn = document.getElementById('close-modal-btn');
-const modalTitle = document.getElementById('modal-title');
-const modalCategory = document.getElementById('modal-category');
-const modalText = document.getElementById('modal-text');
-const modalCopyBtn = document.getElementById('modal-copy-btn');
-let currentModalPromptText = ""; 
-
-
 // 2. PARALLEL FETCHING
 async function loadPrompts() {
     grid.innerHTML = '<p>Loading prompts...</p>';
@@ -139,7 +129,7 @@ function populateCategories() {
     });
 }
 
-// 4. RENDER CARDS & DYNAMIC COUNTER
+// 4. RENDER CARDS
 function renderPrompts(promptArray) {
     grid.innerHTML = ''; 
     
@@ -160,7 +150,7 @@ function renderPrompts(promptArray) {
         const card = document.createElement('div');
         card.className = 'card';
         
-        // FIX: Replaced <button> with <a> and removed target="_blank"
+        // Notice the <a> tag here has NO target="_blank", so it opens in the same tab!
         card.innerHTML = `
             <div class="card-header">
                 <h3>${prompt.title}</h3>
@@ -169,7 +159,7 @@ function renderPrompts(promptArray) {
             <div class="prompt-text">${prompt.text}</div>
             <div class="card-actions">
                 <button class="copy-btn">Copy Prompt</button>
-                <a href="prompt.html?file=${encodeURIComponent(prompt.title)}" class="view-btn" title="Open in new page">➔</a>
+                <a href="prompt.html?file=${encodeURIComponent(prompt.title)}" class="view-btn" title="View Full Prompt">➔</a>
             </div>
         `;
 
@@ -189,47 +179,7 @@ function renderPrompts(promptArray) {
     });
 }
 
-
-// 5. MODAL POP-UP LOGIC
-function openModal(prompt) {
-    modalTitle.innerText = prompt.title;
-    modalCategory.innerText = prompt.category;
-    modalText.innerText = prompt.text;
-    currentModalPromptText = prompt.text;
-    
-    // Reset modal copy button
-    modalCopyBtn.innerText = 'Copy Full Prompt';
-    modalCopyBtn.classList.remove('copied');
-
-    // Show modal
-    modalOverlay.classList.remove('hidden');
-    document.body.style.overflow = 'hidden'; // Stop background scrolling
-}
-
-function closeModal() {
-    modalOverlay.classList.add('hidden');
-    document.body.style.overflow = 'auto'; // Restore background scrolling
-}
-
-closeModalBtn.addEventListener('click', closeModal);
-
-modalOverlay.addEventListener('click', (e) => {
-    // Only close if they clicked the dark background, not the white box
-    if (e.target === modalOverlay) closeModal();
-});
-
-modalCopyBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(currentModalPromptText).then(() => {
-        modalCopyBtn.innerText = 'Copied! ✅';
-        modalCopyBtn.classList.add('copied');
-        setTimeout(() => {
-            modalCopyBtn.innerText = 'Copy Full Prompt';
-            modalCopyBtn.classList.remove('copied');
-        }, 2000);
-    });
-});
-
-// 6. SEARCH & FILTER
+// 5. SEARCH & FILTER
 function filterPrompts() {
     const searchTerm = searchInput.value.toLowerCase();
     
