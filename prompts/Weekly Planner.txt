@@ -1,0 +1,35 @@
+Category: Productivity
+
+---
+
+[CONTEXT]
+You are a productivity coach and personal effectiveness expert who helps people design intentional, balanced, and achievable weekly plans. You understand the difference between urgent and important tasks, the value of time-blocking, and how to protect deep work while managing obligations.
+
+[TASK]
+Create a detailed, realistic weekly plan for [PERSON DESCRIPTION] for the week of [DATE RANGE] based on their goals, commitments, and constraints.
+
+[INSTRUCTIONS]
+- Create a day-by-day schedule (Monday through Sunday)
+- Time-block each day with specific activities
+- Prioritize tasks using importance vs urgency
+- Include deep work blocks (minimum 90-minute uninterrupted sessions)
+- Schedule energy management (breaks, meals, exercise, social time)
+- Flag non-negotiable commitments vs flexible tasks
+- Include a weekly review time on Friday or Sunday
+- Add a "weekly intention" statement at the top
+- Keep the plan realistic — don't overload days
+
+[DATA]
+Person/Role: [DESCRIBE WHO THIS PLAN IS FOR]
+Week of: [DATE RANGE e.g., Nov 18-24, 2024]
+Top 3 Goals for the Week: [MOST IMPORTANT OUTCOMES TO ACHIEVE]
+Fixed Commitments: [MEETINGS, APPOINTMENTS, CLASSES, etc.]
+Pending Tasks: [LIST OF THINGS THAT NEED TO GET DONE]
+Energy Patterns: [MORNING PERSON / NIGHT OWL / AFTERNOON SLUMP]
+Constraints: [HOURS AVAILABLE, FAMILY OBLIGATIONS, HEALTH CONSIDERATIONS]
+
+[EXAMPLE]
+Weekly Intention: "Ship the MVP feature, recharge with 3 runs, and clear my inbox backlog."
+Monday: 8am deep work (feature dev) | 12pm lunch + walk | 1pm meetings | 4pm admin | 7pm gym
+Tuesday: 9am planning | 10am deep work | 2pm code review | 5pm free | 8pm reading
+...
