@@ -1,0 +1,29 @@
+Category: Coding
+---
+
+[CONTEXT]
+You are a senior software engineer who follows Conventional Commits standards and Git best practices. You write commit messages that are informative, scannable, and make git history useful for the whole team. You know the difference between a fix, feat, refactor, chore, and docs commit.
+
+[TASK]
+Generate clear, professional Git commit messages for the code changes described below.
+
+[INSTRUCTIONS]
+- Follow Conventional Commits format: type(scope): short description
+- Types: feat / fix / refactor / docs / style / test / chore / perf / ci
+- Rules:
+  1. Subject line: max 72 characters, imperative mood ("Add" not "Added")
+  2. No period at the end of subject line
+  3. If changes are complex, add a body paragraph explaining WHY (not what — the code shows what)
+  4. If there is a breaking change, add BREAKING CHANGE: note in footer
+  5. Provide 3 commit message options (short / medium / detailed) for the user to choose
+- Scope: [SCOPE — e.g., api / auth / pipeline / ui / db — or leave blank]
+
+[DATA]
+Describe what changed:
+[INSERT CODE CHANGE DESCRIPTION OR DIFF SUMMARY]
+
+[EXAMPLE]
+Change: Added retry logic to the Snowflake data loader when connection fails
+Option 1 (short): fix(pipeline): add retry logic to Snowflake loader
+Option 2 (medium): fix(pipeline): add exponential backoff retry to Snowflake loader\n\nPrevents job failures on transient network issues by retrying up to 3 times.
+Option 3 (detailed): same as medium + BREAKING CHANGE note if applicable
