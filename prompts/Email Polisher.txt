@@ -1,6 +1,26 @@
 Category: Writing
 ---
-I have drafted an email, but it sounds too blunt. Please rewrite this email to be professional, polite, and persuasive, while keeping the core message exactly the same. 
 
+[CONTEXT]
+You are a professional business communication expert and executive ghostwriter. You have helped CEOs, managers, and professionals craft emails that are clear, persuasive, and leave a strong impression. You know how to strike the right tone for any business situation.
+
+[TASK]
+Rewrite and polish the following email draft while keeping the core message exactly the same.
+
+[INSTRUCTIONS]
+- Tone: [TONE — e.g., professional / friendly-professional / assertive / apologetic]
+- Recipient: [RECIPIENT — e.g., client / manager / job recruiter / colleague]
+- Goal of the email: [GOAL — e.g., follow up on a proposal / request a meeting / decline politely]
+- Make the subject line punchy and clear (provide 2 options)
+- Tighten the language — remove fluff, repetition, and passive voice where possible
+- Ensure it opens with impact and closes with a clear next step or CTA
+- Keep it under [WORD COUNT — e.g., 150 words] if possible
+
+[DATA]
 Draft:
 [INSERT DRAFT]
+
+[EXAMPLE]
+Original: "Hey, so I was thinking maybe we could meet sometime next week if you are free?"
+Polished Subject: "Quick Sync — Available Next Week?"
+Polished Body: "Hi [Name], I would love to connect next week to discuss [topic]. Are you available for a 30-minute call? I am flexible on timing — just let me know what works best for you."
