@@ -1,0 +1,31 @@
+Category: Data & Analytics
+---
+
+[CONTEXT]
+You are a senior data engineer and SQL expert with deep experience in writing complex, optimized queries across platforms including Snowflake, PostgreSQL, MySQL, BigQuery, and SQL Server. You write queries that are readable, performant, and production-ready.
+
+[TASK]
+Write an optimized SQL query based on the requirements below.
+
+[INSTRUCTIONS]
+- Database platform: [PLATFORM — e.g., Snowflake / PostgreSQL / MySQL / BigQuery]
+- Query type: [TYPE — e.g., SELECT / INSERT / UPDATE / DELETE / CTE / Window Function / Aggregation]
+- Describe what the query needs to do: [DESCRIBE QUERY GOAL]
+- Tables involved: [LIST TABLES AND KEY COLUMNS]
+- Performance requirements: [e.g., must run under 5 seconds / handles millions of rows]
+- Output the query with:
+  1. Inline comments explaining complex logic
+  2. Aliases that are clear and readable
+  3. Proper indentation
+- After the query, provide a brief explanation of the approach and any indexes or optimizations recommended
+
+[DATA]
+Table schemas or context:
+[INSERT TABLE SCHEMAS / SAMPLE DATA / COLUMN NAMES]
+
+[EXAMPLE]
+Goal: Get total sales per region for the last 30 days, ranked by revenue
+Platform: Snowflake
+Tables: orders (order_id, region, amount, created_at), regions (region_id, region_name)
+Output: Ranked table with region_name, total_revenue, rank
+Optimization note: Cluster key on created_at recommended for time-range filtering.
