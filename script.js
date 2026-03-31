@@ -139,7 +139,7 @@ function populateCategories() {
     });
 }
 
-// 4. RENDER CARDS
+// 4. RENDER CARDS & DYNAMIC COUNTER
 function renderPrompts(promptArray) {
     grid.innerHTML = ''; 
     
@@ -160,6 +160,7 @@ function renderPrompts(promptArray) {
         const card = document.createElement('div');
         card.className = 'card';
         
+        // FIX: Replaced <button> with <a> and removed target="_blank"
         card.innerHTML = `
             <div class="card-header">
                 <h3>${prompt.title}</h3>
@@ -168,11 +169,10 @@ function renderPrompts(promptArray) {
             <div class="prompt-text">${prompt.text}</div>
             <div class="card-actions">
                 <button class="copy-btn">Copy Prompt</button>
-                <button class="view-btn" title="View Full Prompt">➔</button>
+                <a href="prompt.html?file=${encodeURIComponent(prompt.title)}" class="view-btn" title="Open in new page">➔</a>
             </div>
         `;
 
-        // Card Copy Button
         const copyBtn = card.querySelector('.copy-btn');
         copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText(prompt.text).then(() => {
@@ -185,13 +185,10 @@ function renderPrompts(promptArray) {
             });
         });
 
-        // View Button -> Opens Pop-up Modal on the same page
-        const viewBtn = card.querySelector('.view-btn');
-        viewBtn.addEventListener('click', () => openModal(prompt));
-
         grid.appendChild(card);
     });
 }
+
 
 // 5. MODAL POP-UP LOGIC
 function openModal(prompt) {
