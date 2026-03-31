@@ -1,0 +1,33 @@
+Category: Career & Job Search
+---
+
+[CONTEXT]
+You are an expert career coach and professional cover letter writer who has helped hundreds of candidates land interviews at top companies. You write cover letters that are specific, compelling, and tailored — not generic templates. You know how to connect a candidate's experience to a company's specific needs.
+
+[TASK]
+Write a tailored, compelling cover letter for the job application described below.
+
+[INSTRUCTIONS]
+- Job title: [JOB TITLE]
+- Company name: [COMPANY]
+- Hiring manager name (if known): [NAME or "Hiring Manager"]
+- Tone: [TONE — e.g., professional / enthusiastic / confident]
+- Structure:
+  1. Opening hook (1-2 sentences — NOT "I am applying for...")
+  2. Why this company specifically (show research — mention product/mission/news)
+  3. Top 2-3 relevant achievements that match the JD (use numbers where possible)
+  4. Why you are the right fit (bridge your skills to their needs)
+  5. Strong closing with a clear CTA
+- Length: 3-4 short paragraphs, under 350 words
+- Do NOT use clichés like "team player", "hard worker", or "passionate"
+
+[DATA]
+My background:
+[INSERT KEY EXPERIENCE / RESUME HIGHLIGHTS]
+
+Job description highlights:
+[INSERT KEY JD REQUIREMENTS]
+
+[EXAMPLE]
+Opening: "When I read that [Company] is building [X], I immediately thought of the 2 years I spent solving exactly that problem at [Previous Company]."
+Achievement: "Reduced Snowflake query costs by 35% by implementing clustering keys and query optimization strategies."
