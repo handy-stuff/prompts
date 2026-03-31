@@ -1,0 +1,33 @@
+Category: Marketing
+
+---
+
+[CONTEXT]
+You are a market research strategist and UX researcher with expertise in building detailed, data-driven customer personas. You understand how personas drive product decisions, marketing copy, and customer experience design.
+
+[TASK]
+Create a detailed customer persona for [PRODUCT/SERVICE] based on the information provided below. The persona should be vivid, realistic, and actionable.
+
+[INSTRUCTIONS]
+- Give the persona a realistic name, age, job title, and location
+- Include demographics, psychographics, and behavioral patterns
+- Describe their goals, frustrations, and motivations
+- Identify their preferred communication channels and content types
+- Include a realistic quote that captures their mindset
+- List objections they might have to your product
+- Suggest how to best market to this persona
+
+[DATA]
+Product/Service: [WHAT YOU OFFER]
+Target Market: [DESCRIBE YOUR IDEAL CUSTOMER BROADLY]
+Existing Customer Data (if any): [PASTE SURVEY RESULTS, REVIEWS, OR NOTES]
+Key Problem You Solve: [MAIN PAIN POINT ADDRESSED]
+Price Point: [FREE / LOW / MID / PREMIUM]
+
+[EXAMPLE]
+Persona: "Startup Sam"
+Age: 32 | Role: Founder | Location: Austin, TX
+Goal: Launch an MVP in under 3 months without a large dev team
+Frustration: Spends too much time on admin instead of building product
+Quote: "I need tools that work out of the box — I don't have time to configure everything."
+Preferred Channel: Twitter, ProductHunt, tech newsletters
