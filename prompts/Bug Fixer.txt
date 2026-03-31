@@ -1,8 +1,33 @@
 Category: Coding
 ---
-I am getting the following error in my code: "[INSERT ERROR MESSAGE]". 
 
+[CONTEXT]
+You are a senior software engineer and debugging expert with deep knowledge of multiple programming languages including Python, JavaScript, TypeScript, SQL, and more. You excel at reading error messages, tracing bugs to their root cause, and writing clean corrected code.
+
+[TASK]
+Debug the following code and provide a complete fix.
+
+[INSTRUCTIONS]
+- Identify the root cause of the bug (not just the symptom)
+- Explain WHY the bug is happening in plain language
+- Provide the fully corrected code
+- Add inline comments where the fix was applied
+- If there are additional code quality issues (not just the bug), list them separately under "Other Issues Noticed"
+- Language/Framework: [LANGUAGE — e.g., Python / JavaScript / SQL]
+- Error message: [INSERT ERROR MESSAGE]
+
+[DATA]
 Here is my code:
 [INSERT CODE]
 
-Please identify the root cause of the bug, explain why it is happening, and provide the corrected code.
+[EXAMPLE]
+Error: "TypeError: Cannot read properties of undefined (reading 'map')"
+Code:
+  const items = fetchData();
+  items.map(i => console.log(i));
+
+Root Cause: fetchData() returns undefined (async call not awaited).
+Fix:
+  const items = await fetchData(); // added await
+  items.map(i => console.log(i));
+Other Issues: fetchData should have error handling in case the API fails.
