@@ -12,6 +12,7 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* SAFETY NET: Stops page from getting wider */
 }
 
 header {
@@ -48,15 +49,16 @@ main {
 /* --- EXACTLY 4 COLUMNS ON DESKTOP --- */
 .grid-container {
     display: grid;
-    /* Forces 4 equal columns. If screen is smaller, it adjusts automatically */
-    grid-template-columns: repeat(4, 1fr);
+    /* MAGIC FIX: minmax(0, 1fr) stops columns from expanding past their boundaries */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
+    width: 100%;
 }
 
 /* Responsive adjustments for smaller screens */
-@media (max-width: 1100px) { .grid-container { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 800px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 500px) { .grid-container { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) { .grid-container { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 800px) { .grid-container { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 500px) { .grid-container { grid-template-columns: minmax(0, 1fr); } }
 
 /* --- STRICT CARD SIZING --- */
 .card {
@@ -111,7 +113,12 @@ main {
     color: #444;
     margin-bottom: 15px;
 
-    /* MAGIC FIX: This forces the box to obey the card's height and scroll */
+    /* TEXT WRAPPING FIXES */
+    word-break: break-word;       /* Forces long words to break */
+    overflow-wrap: anywhere;      /* Forces long words to wrap */
+    overflow-x: hidden;           /* Prevents horizontal scrolling inside the box */
+
+    /* SCROLLING MAGIC */
     flex: 1;
     min-height: 0; 
     overflow-y: auto; 
