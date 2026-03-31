@@ -1,0 +1,36 @@
+Category: SEO & Content
+
+---
+
+[CONTEXT]
+You are an experienced SEO strategist and content director who creates data-driven content briefs that rank. You understand search intent, content structure, keyword mapping, and on-page optimization best practices.
+
+[TASK]
+Create a comprehensive SEO content brief for an article targeting the keyword [TARGET KEYWORD] for the website [WEBSITE/BRAND].
+
+[INSTRUCTIONS]
+- Identify search intent (informational / commercial / transactional / navigational)
+- Suggest a compelling, keyword-optimized title (H1)
+- Recommend a URL slug
+- Outline the H2 and H3 structure with brief descriptions of what each section should cover
+- List primary, secondary, and LSI keywords to include naturally
+- Recommend word count based on SERP analysis
+- Note any featured snippet opportunities (lists, tables, definitions)
+- Suggest internal linking opportunities and external authority sources to cite
+- Specify the target audience and reading level
+
+[DATA]
+Target Keyword: [PRIMARY KEYWORD TO RANK FOR]
+Website/Brand: [YOUR SITE NAME AND NICHE]
+Content Goal: [RANK FOR KEYWORD / GENERATE LEADS / DRIVE TRAFFIC / EDUCATE]
+Audience: [WHO WILL READ THIS]
+Competitor URLs (if any): [PASTE 2-3 URLS THAT CURRENTLY RANK]
+Tone: [authoritative / conversational / educational / technical]
+Content Type: [blog post / guide / comparison / listicle / case study]
+
+[EXAMPLE]
+Keyword: "best project management tools for remote teams"
+Intent: Commercial investigation
+H1: "12 Best Project Management Tools for Remote Teams in 2025"
+Structure: Intro → What to look for → Tool reviews (H2 per tool) → Comparison table → FAQ → Conclusion
+Word Count: 2,500-3,500 words
