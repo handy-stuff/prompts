@@ -205,4 +205,69 @@ main {
 .copy-btn:hover { background-color: var(--btn-blue-hover); }
 .copy-btn.copied { background-color: var(--btn-green) !important; }
 
+/* --- NEW ARROW BUTTON STYLES --- */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Pushes buttons to the bottom */
+}
 
+.copy-btn {
+    flex-grow: 1; /* Makes copy button take up most of the space */
+    width: auto; /* Overrides the previous 100% width */
+}
+
+.view-btn {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.view-btn:hover {
+    background-color: #e2e2e2;
+}
+
+/* --- SINGLE PROMPT PAGE STYLES --- */
+.single-prompt-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--btn-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.single-prompt-text {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    color: #444;
+    margin: 20px 0;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
