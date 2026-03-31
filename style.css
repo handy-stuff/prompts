@@ -139,18 +139,17 @@ main {
 .card-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    height: 30px; 
+    align-items: flex-start; /* Changed to flex-start so tag stays at the top if title wraps */
+    margin-bottom: 12px;
+    gap: 10px; /* Ensures title and tag never touch */
+    /* Removed fixed height so it can grow if the title is long */
 }
 
 .card-header h3 {
     margin: 0;
     font-size: 1.1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-right: 10px;
+    line-height: 1.3;
+    /* Removed nowrap and ellipsis so the text can naturally drop to a second line on mobile */
 }
 
 .category-tag {
@@ -160,6 +159,8 @@ main {
     font-size: 0.8rem;
     color: #666;
     white-space: nowrap;
+    flex-shrink: 0; /* Forces the tag to keep its shape and not get squished by the title */
+    margin-top: 2px; /* Aligns the tag nicely with the first line of the title */
 }
 
 .prompt-text {
@@ -203,3 +204,5 @@ main {
 
 .copy-btn:hover { background-color: var(--btn-blue-hover); }
 .copy-btn.copied { background-color: var(--btn-green) !important; }
+
+
