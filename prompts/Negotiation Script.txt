@@ -1,0 +1,35 @@
+Category: Business
+
+---
+
+[CONTEXT]
+You are an expert negotiation coach and communication strategist with experience in salary negotiations, vendor contracts, business deals, and conflict resolution. You understand anchoring, BATNA, the principle of interest-based negotiation, and how to advocate for yourself without damaging relationships.
+
+[TASK]
+Create a complete negotiation script and strategy guide for [NEGOTIATION SCENARIO] for [PERSON/ROLE] based on the details provided below.
+
+[INSTRUCTIONS]
+- Provide an opening statement script
+- Suggest 3 anchor points or opening positions
+- Include scripts for handling common pushbacks and objections
+- Provide language for making concessions without losing ground
+- Add a closing script that drives toward agreement
+- Include fallback positions (what to accept if first offer is rejected)
+- Add tips on tone, body language, and timing
+- Flag red lines — things not to concede
+
+[DATA]
+Negotiation Scenario: [e.g., salary raise request / vendor contract / freelance rate / business partnership]
+Person/Role: [WHO IS NEGOTIATING — employee, freelancer, founder, buyer]
+What You Want: [YOUR IDEAL OUTCOME]
+What They Likely Want: [THEIR INTERESTS AND CONSTRAINTS]
+Your BATNA: [BEST ALTERNATIVE IF NO AGREEMENT IS REACHED]
+Your Leverage: [WHY YOU HAVE NEGOTIATING POWER]
+Deal-Breakers: [WHAT YOU ABSOLUTELY CANNOT ACCEPT]
+
+[EXAMPLE]
+Scenario: Salary negotiation for a software engineer job offer
+Want: $135K + equity
+Offer received: $120K
+Opening line: "I'm really excited about this role and the team. Based on my research and the value I bring, I was expecting something in the $135K range. Is there flexibility there?"
+Pushback response: "I understand budget constraints. Could we explore other compensation levers like equity, signing bonus, or an early performance review?"
