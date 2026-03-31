@@ -1,31 +1,26 @@
-async function loadSinglePrompt() {
-    const container = document.getElementById('single-prompt-container');
-    
-    // Read the URL to find out which file to load
-    const urlParams = new URLSearchParams(window.location.search);
-    const fileName = urlParams.get('file');
+// 1. Get the prompt name from the URL (e.g., ?name=Blog%20Post%20Outline)
+const urlParams = new URLSearchParams(window.location.search);
+const promptName = urlParams.get('name');
+const container = document.getElementById('prompt-content');
 
-    if (!fileName) {
-        container.innerHTML = `
-            <p>Error: No prompt specified.</p>
-            <a href="index.html" class="back-link">← Back to Library</a>
-        `;
+async function loadSinglePrompt() {
+    if (!promptName) {
+        container.innerHTML = '<h2>Error: No prompt specified.</h2>';
         return;
     }
 
     try {
-        const response = await fetch(`prompts/${fileName}.txt`);
+        // 2. Fetch the specific text file
+        const response = await fetch(`prompts/${promptName}.txt`);
         
         if (!response.ok) {
-            container.innerHTML = `
-                <p>Error: Prompt not found.</p>
-                <a href="index.html" class="back-link">← Back to Library</a>
-            `;
+            container.innerHTML = `<h2>Error: Could not find "${promptName}"</h2>`;
             return;
         }
 
         const textData = await response.text();
         
+        // 3. Parse Category and Text
         let category = "General";
         let promptText = textData;
         
@@ -33,44 +28,48 @@ async function loadSinglePrompt() {
         if (lines[0].startsWith('Category:')) {
             category = lines[0].replace('Category:', '').trim();
             let textLines = lines.slice(1);
-            if (textLines.length > 0 && textLines[0].trim() === '---') {
+            if (textLines[0] && textLines[0].trim() === '---') {
                 textLines = textLines.slice(1);
             }
             promptText = textLines.join('\n').trim();
         }
 
-        // Generate the clean, full-page UI
+        // Update the browser tab title to look professional
+        document.title = `${promptName} | My Prompts`;
+
+        // 4. Render the professional layout
         container.innerHTML = `
-            <a href="index.html" class="back-link">← Back to Library</a>
-            
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                <h2 style="margin: 0; font-size: 1.8rem;">${fileName}</h2>
+            <div class="card-header" style="border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px;">
+                <h1 style="margin: 0; font-size: 2rem; color: #333;">${promptName}</h1>
                 <span class="category-tag" style="font-size: 1rem; padding: 6px 12px;">${category}</span>
             </div>
             
-            <div class="single-prompt-text">${promptText}</div>
+            <button class="copy-btn" style="width: 100%; margin-bottom: 20px; font-size: 1.1rem; padding: 15px;" 
+                onclick="copyPrompt(this, \`${promptText.replace(/`/g, '\\`')}\`)">
+                📋 Copy Prompt to Clipboard
+            </button>
             
-            <button class="copy-btn" id="copySingleBtn" style="width: 100%;">Copy Full Prompt</button>
+            <div class="single-prompt-text">${promptText}</div>
         `;
-
-        const copyBtn = document.getElementById('copySingleBtn');
-        copyBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText(promptText).then(() => {
-                copyBtn.innerText = 'Copied! ✅';
-                copyBtn.classList.add('copied');
-                setTimeout(() => {
-                    copyBtn.innerText = 'Copy Full Prompt';
-                    copyBtn.classList.remove('copied');
-                }, 2000);
-            });
-        });
 
     } catch (error) {
-        container.innerHTML = `
-            <p>Error loading prompt.</p>
-            <a href="index.html" class="back-link">← Back to Library</a>
-        `;
+        console.error("Error loading prompt:", error);
+        container.innerHTML = '<h2>Error loading prompt data.</h2>';
     }
 }
 
+// 5. Copy function for the single page
+function copyPrompt(buttonElement, textToCopy) {
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = buttonElement.innerHTML;
+        buttonElement.innerHTML = '✅ Copied to Clipboard!';
+        buttonElement.classList.add('copied');
+        setTimeout(() => {
+            buttonElement.innerHTML = originalText;
+            buttonElement.classList.remove('copied');
+        }, 2000);
+    });
+}
+
+// Start loading when page opens
 loadSinglePrompt();
