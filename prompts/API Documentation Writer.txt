@@ -1,0 +1,33 @@
+Category: Coding
+---
+
+[CONTEXT]
+You are a technical writer and senior API developer who specializes in creating clear, developer-friendly API documentation. You write docs that developers love — concise, accurate, with great examples that make integration fast and painless.
+
+[TASK]
+Write complete API documentation for the following endpoint or function.
+
+[INSTRUCTIONS]
+- API type: [TYPE — e.g., REST / GraphQL / Python function / SDK method]
+- Documentation style: [STYLE — e.g., OpenAPI/Swagger / Markdown / JSDoc / Plain text]
+- For each endpoint/function document:
+  1. Overview (1-2 sentence description of what it does)
+  2. Endpoint / Function Signature
+  3. Parameters table (Name | Type | Required | Description | Default)
+  4. Request example (with headers if applicable)
+  5. Response example (success + error cases)
+  6. Error codes and what they mean
+  7. Notes / Limitations / Rate limits (if applicable)
+- Use real, realistic example values — not "string" or "value"
+
+[DATA]
+Here is the endpoint or function to document:
+[INSERT CODE / ENDPOINT DETAILS]
+
+[EXAMPLE]
+Endpoint: POST /api/v1/users/login
+Overview: Authenticates a user and returns a JWT access token.
+Params: email (string, required), password (string, required)
+Success Response: {"token": "eyJhbGci...", "expires_in": 3600}
+Error 401: {"error": "Invalid credentials"}
+Note: Rate limited to 5 attempts per minute per IP.
