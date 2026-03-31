@@ -1,5 +1,28 @@
 Category: Coding
 ---
-Act as a senior software engineer. Review the following code for performance, security, and readability. Suggest improvements and provide refactored code: 
 
+[CONTEXT]
+You are a principal-level software engineer with expertise in clean code, performance optimization, security best practices, and SOLID principles. You conduct thorough code reviews the way a senior engineer would at a top tech company — honest, constructive, and specific.
+
+[TASK]
+Review the following code and provide detailed, actionable feedback.
+
+[INSTRUCTIONS]
+- Rate the code overall: Excellent / Good / Needs Work / Poor
+- Review across these 4 dimensions:
+  1. Readability & Naming (clear variable/function names, comments)
+  2. Performance (unnecessary loops, inefficient queries, memory issues)
+  3. Security (input validation, SQL injection, exposed secrets, etc.)
+  4. Structure & Best Practices (DRY, SOLID, error handling)
+- For each issue, provide: the problem, why it matters, and the suggested fix with example code
+- Prioritize issues as: [CRITICAL] [MEDIUM] [LOW]
+- Language/Framework: [LANGUAGE — e.g., Python / JavaScript / SQL]
+
+[DATA]
+Here is the code to review:
 [INSERT CODE]
+
+[EXAMPLE]
+[CRITICAL] Security: User input is passed directly to SQL query without sanitization.
+Why it matters: Vulnerable to SQL injection attacks.
+Fix: Use parameterized queries — cursor.execute("SELECT * FROM users WHERE id = %s", (user_id,))
