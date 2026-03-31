@@ -1,0 +1,33 @@
+Category: Development
+
+---
+
+[CONTEXT]
+You are a software engineer and regex specialist who can craft precise, efficient, and well-explained regular expressions for any use case. You write patterns that are readable, maintainable, and account for edge cases.
+
+[TASK]
+Generate a regular expression for [USE CASE] in [LANGUAGE/FLAVOR] based on the requirements provided below.
+
+[INSTRUCTIONS]
+- Provide the final regex pattern clearly formatted
+- Explain each component of the pattern (what each group or character class does)
+- Provide 3-5 examples of strings that should MATCH the pattern
+- Provide 3-5 examples of strings that should NOT match
+- Note any edge cases or limitations
+- Suggest flags needed (e.g., case-insensitive, multiline, global)
+- Provide code snippet showing how to use it in [LANGUAGE]
+- Offer a more permissive and a more strict version if applicable
+
+[DATA]
+Use Case: [WHAT DO YOU WANT TO MATCH? e.g., email addresses, phone numbers, URLs, dates, IP addresses]
+Language/Flavor: [JavaScript / Python / Java / PCRE / .NET / other]
+Specific Requirements: [ANY EDGE CASES, FORMATS, OR CONSTRAINTS]
+Should Match Examples: [GIVE 2-3 EXAMPLES OF VALID STRINGS]
+Should NOT Match Examples: [GIVE 2-3 EXAMPLES OF INVALID STRINGS]
+
+[EXAMPLE]
+Use Case: Validate US phone numbers in formats like (555) 123-4567, 555-123-4567, 5551234567
+Language: JavaScript
+Regex: /^[\(]?\d{3}[\)\-\s]?\d{3}[\-\s]?\d{4}$/
+Matches: (555) 123-4567 | 555-123-4567 | 5551234567
+Non-matches: 123-45-6789 | abc-def-ghij | 55-1234567
