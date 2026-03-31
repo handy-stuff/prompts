@@ -3,8 +3,6 @@
     --text-color: #333;
     --card-bg: #ffffff;
     --border-color: #ddd;
-    
-    /* BUTTON COLORS */
     --btn-blue: #2196F3;
     --btn-blue-hover: #1976D2;
     --btn-green: #4CAF50; 
@@ -42,7 +40,7 @@ input[type="text"] {
     outline: none;
 }
 
-/* --- NEW LAYOUT: SIDEBAR + MAIN GRID --- */
+/* --- LAYOUT: SIDEBAR + MAIN GRID --- */
 .layout-wrapper {
     display: flex;
     max-width: 1400px;
@@ -52,7 +50,6 @@ input[type="text"] {
     align-items: flex-start; 
 }
 
-/* --- SIDEBAR STYLES --- */
 .sidebar {
     width: 250px;
     flex-shrink: 0;
@@ -61,7 +58,6 @@ input[type="text"] {
     border-radius: 10px;
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    
     position: sticky;
     top: 2rem; 
 }
@@ -90,7 +86,6 @@ input[type="text"] {
     height: 16px;
 }
 
-/* --- MAIN CONTENT & GRID --- */
 main {
     flex-grow: 1;
     min-width: 0; 
@@ -105,7 +100,7 @@ main {
     border-bottom: 1px solid var(--border-color);
 }
 
-/* EXACTLY 3 COLUMNS */
+/* 3 COLUMNS */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -113,7 +108,6 @@ main {
     width: 100%;
 }
 
-/* Responsive adjustments */
 @media (max-width: 1024px) {
     .grid-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -123,7 +117,7 @@ main {
     .grid-container { grid-template-columns: minmax(0, 1fr); }
 }
 
-/* --- STRICT CARD SIZING --- */
+/* --- CARDS --- */
 .card {
     background: var(--card-bg);
     padding: 20px;
@@ -139,17 +133,15 @@ main {
 .card-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Changed to flex-start so tag stays at the top if title wraps */
+    align-items: flex-start;
     margin-bottom: 12px;
-    gap: 10px; /* Ensures title and tag never touch */
-    /* Removed fixed height so it can grow if the title is long */
+    gap: 10px;
 }
 
 .card-header h3 {
     margin: 0;
     font-size: 1.1rem;
     line-height: 1.3;
-    /* Removed nowrap and ellipsis so the text can naturally drop to a second line on mobile */
 }
 
 .category-tag {
@@ -159,8 +151,8 @@ main {
     font-size: 0.8rem;
     color: #666;
     white-space: nowrap;
-    flex-shrink: 0; /* Forces the tag to keep its shape and not get squished by the title */
-    margin-top: 2px; /* Aligns the tag nicely with the first line of the title */
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .prompt-text {
@@ -173,11 +165,9 @@ main {
     white-space: pre-wrap;
     color: #444;
     margin-bottom: 15px;
-
     word-break: break-word;       
     overflow-wrap: anywhere;      
     overflow-x: hidden;           
-
     flex: 1;
     min-height: 0; 
     overflow-y: auto; 
@@ -188,7 +178,13 @@ main {
 .prompt-text::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
 .prompt-text::-webkit-scrollbar-thumb:hover { background: #888; }
 
-/* --- BUTTON STYLES --- */
+/* --- CARD BUTTONS --- */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; 
+}
+
 .copy-btn {
     background-color: var(--btn-blue);
     color: white;
@@ -199,23 +195,11 @@ main {
     font-weight: bold;
     height: 45px;
     transition: background 0.2s;
-    width: 100%;
+    flex-grow: 1;
 }
 
 .copy-btn:hover { background-color: var(--btn-blue-hover); }
 .copy-btn.copied { background-color: var(--btn-green) !important; }
-
-/* --- NEW ARROW BUTTON STYLES --- */
-.card-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: auto; /* Pushes buttons to the bottom */
-}
-
-.copy-btn {
-    flex-grow: 1; /* Makes copy button take up most of the space */
-    width: auto; /* Overrides the previous 100% width */
-}
 
 .view-btn {
     background-color: var(--bg-color);
@@ -223,39 +207,77 @@ main {
     border: 1px solid var(--border-color);
     padding: 0 20px;
     border-radius: 5px;
-    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s;
 }
 
-.view-btn:hover {
-    background-color: #e2e2e2;
+.view-btn:hover { background-color: #e2e2e2; }
+
+/* --- POP-UP MODAL (SAME PAGE FULL SCREEN) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.2s ease;
 }
 
-/* --- SINGLE PROMPT PAGE STYLES --- */
-.single-prompt-container {
-    max-width: 800px;
-    margin: 2rem auto;
+.modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content {
     background: var(--card-bg);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 12px;
     padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-.back-link {
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    color: var(--btn-blue);
-    text-decoration: none;
-    font-weight: bold;
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
 }
 
-.back-link:hover {
-    text-decoration: underline;
+.close-btn:hover { color: #333; }
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-right: 30px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--text-color);
 }
 
 .single-prompt-text {
@@ -267,7 +289,10 @@ main {
     line-height: 1.6;
     white-space: pre-wrap;
     color: #444;
-    margin: 20px 0;
+    margin-bottom: 20px;
     word-break: break-word;
     overflow-wrap: anywhere;
+    overflow-y: auto; 
+    flex-grow: 1;
+    min-height: 200px;
 }
