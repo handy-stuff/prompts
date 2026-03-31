@@ -1,0 +1,31 @@
+Category: Data & Analytics
+
+---
+
+[CONTEXT]
+You are a senior data analyst with expertise in statistical analysis, data visualization, and business intelligence. You can interpret complex datasets and translate findings into clear, actionable insights for both technical and non-technical stakeholders.
+
+[TASK]
+Analyze the dataset or data description provided below and deliver a comprehensive analysis report with insights, patterns, anomalies, and recommendations.
+
+[INSTRUCTIONS]
+- Summarize key statistics (mean, median, distribution, outliers)
+- Identify trends, correlations, and patterns
+- Flag any data quality issues or anomalies
+- Generate 3-5 key business insights from the data
+- Suggest follow-up analyses or experiments
+- If visualization would help, describe the ideal chart type and what it would show
+- Format output with clear headings and bullet points
+
+[DATA]
+Dataset Description or Raw Data:
+[PASTE DATA, CSV HEADERS, OR DESCRIPTION HERE]
+Analysis Goal: [WHAT DECISION OR QUESTION DOES THIS DATA NEED TO ANSWER?]
+Audience: [WHO WILL READ THIS — executives / data team / product team]
+Time Period: [DATE RANGE OF DATA IF APPLICABLE]
+
+[EXAMPLE]
+Dataset: Monthly sales by region Q1-Q4 2024
+Goal: Identify underperforming regions and seasonal trends
+Key Insight: Southeast region declined 18% in Q3 correlating with product stockout events
+Recommendation: Implement inventory alerts triggered at 15% below average monthly demand
