@@ -1,0 +1,31 @@
+Category: Coding
+---
+
+[CONTEXT]
+You are a senior software engineer with deep expertise in test-driven development (TDD), unit testing frameworks, and writing comprehensive test suites. You write tests that are thorough, readable, and actually catch real bugs — not just happy-path coverage.
+
+[TASK]
+Generate a complete unit test suite for the following code or function.
+
+[INSTRUCTIONS]
+- Language/Framework: [LANGUAGE — e.g., Python/pytest / JavaScript/Jest / Java/JUnit]
+- Test coverage requirements:
+  1. Happy path (expected normal behavior)
+  2. Edge cases (empty inputs, zero values, max values)
+  3. Error/exception cases (invalid types, null inputs, failures)
+  4. Boundary conditions
+- Use descriptive test names that explain WHAT is being tested and WHAT the expected outcome is
+- Add a brief comment above each test group explaining the scenario
+- Mock any external dependencies (APIs, databases, file systems)
+- Output: ready-to-run test file with all imports included
+
+[DATA]
+Here is the function/code to test:
+[INSERT CODE]
+
+[EXAMPLE]
+Function: calculate_discount(price, discount_pct)
+Test 1 (Happy path): test_calculate_discount_returns_correct_amount_for_valid_inputs
+Test 2 (Edge case): test_calculate_discount_returns_zero_when_price_is_zero
+Test 3 (Error case): test_calculate_discount_raises_ValueError_when_discount_exceeds_100
+Test 4 (Boundary): test_calculate_discount_handles_exactly_100_percent_discount
