@@ -66,10 +66,12 @@ let prompts = [];
 const grid = document.getElementById('prompt-grid');
 const searchInput = document.getElementById('searchInput');
 const categoryList = document.getElementById('category-list');
+const countDisplay = document.getElementById('prompt-count');
 
-// 2. FETCH AND READ TEXT FILES (NOW IN PARALLEL!)
+// 2. PARALLEL FETCHING
 async function loadPrompts() {
     
+    // Security check for local file double-click
     if (window.location.protocol === 'file:') {
         grid.innerHTML = `
             <div style="background: #ffebee; color: #c62828; padding: 20px; border-radius: 8px; grid-column: 1 / -1; border: 1px solid #ef9a9a;">
@@ -83,11 +85,10 @@ async function loadPrompts() {
 
     grid.innerHTML = '<p>Loading prompts...</p>';
 
-    // 🚀 NEW PARALLEL FETCHING MAGIC 
     const fetchPromises = promptFiles.map(async (fileName) => {
         try {
             const response = await fetch(`prompts/${fileName}`);
-            if (!response.ok) return null; // Skip if file is missing
+            if (!response.ok) return null; 
 
             const textData = await response.text();
             const title = fileName.replace('.txt', '');
@@ -100,7 +101,6 @@ async function loadPrompts() {
                 category = lines[0].replace('Category:', '').trim();
                 let textLines = lines.slice(1);
                 
-                // Extra safety check in case the file has blank lines
                 if (textLines.length > 0 && textLines[0].trim() === '---') {
                     textLines = textLines.slice(1);
                 }
@@ -114,10 +114,7 @@ async function loadPrompts() {
         }
     });
 
-    // Wait for all 54 files to load simultaneously
     const results = await Promise.all(fetchPromises);
-    
-    // Remove any nulls (files that couldn't be loaded)
     prompts = results.filter(p => p !== null);
 
     if (prompts.length === 0) {
@@ -159,12 +156,22 @@ function populateCategories() {
     });
 }
 
-// 4. RENDER CARDS & COPY BUTTON
+// 4. RENDER CARDS & DYNAMIC COUNTER
 function renderPrompts(promptArray) {
     grid.innerHTML = ''; 
     
+    // --- COUNTER LOGIC ---
+    if (prompts.length === 0) {
+        countDisplay.innerText = ''; 
+    } else if (promptArray.length === prompts.length) {
+        countDisplay.innerText = `Showing all ${prompts.length} prompts`;
+    } else {
+        countDisplay.innerText = `Showing ${promptArray.length} of ${prompts.length} prompts`;
+    }
+    
+    // --- RENDER CARDS ---
     if (promptArray.length === 0) {
-        grid.innerHTML = '<p style="grid-column: 1 / -1;">No prompts found matching your search.</p>';
+        grid.innerHTML = '<p style="grid-column: 1 / -1;">No prompts found matching your criteria.</p>';
         return;
     }
 
