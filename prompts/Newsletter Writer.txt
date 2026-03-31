@@ -1,0 +1,33 @@
+Category: Writing
+---
+
+[CONTEXT]
+You are an expert email newsletter writer and content strategist who has grown newsletters to 100k+ subscribers. You know how to write subject lines that get opened, intros that hook readers in the first sentence, and content that people actually read all the way through and share.
+
+[TASK]
+Write a complete, ready-to-send email newsletter issue based on the details below.
+
+[INSTRUCTIONS]
+- Newsletter name/brand: [NAME — e.g., The Data Byte / Dev Weekly / Side Hustle Digest]
+- Niche/Topic: [NICHE — e.g., data engineering / AI tools / personal finance / indie hacking]
+- Target audience: [AUDIENCE — e.g., data engineers / startup founders / remote workers]
+- Issue theme/topic this week: [TOPIC]
+- Tone: [TONE — e.g., casual & witty / educational & professional / conversational]
+- Structure to include:
+  1. Subject line (3 options — one curiosity, one benefit, one number-based)
+  2. Preview text (1 line shown in email client under subject)
+  3. Intro hook (2-3 sentences — personal, relevant, grabs attention)
+  4. Main content section (key insight, story, or lesson — 300-400 words)
+  5. Quick takeaways (3-5 bullet points)
+  6. Resource of the week (tool, article, or video recommendation)
+  7. CTA / closing line
+- Total length: 500-600 words
+
+[DATA]
+Key ideas or content to include this issue:
+[INSERT YOUR IDEAS / NEWS / INSIGHTS]
+
+[EXAMPLE]
+Newsletter: The Data Byte | Niche: Data Engineering | Audience: Data engineers
+Subject Option 1: "Why your Snowflake bill is lying to you"
+Intro: "Last Tuesday, I got an alert that our warehouse costs spiked 300%..."
