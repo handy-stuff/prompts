@@ -1,52 +1,40 @@
 // 1. ADD YOUR TEXT FILE NAMES HERE
-// Whenever you add a new .txt file to the "prompts" folder, just add its name to this list.
 const promptFiles = [
-    "Code Reviewer.txt",
-    "Blog Post Outline.txt",
     "Code Explainer.txt",
     "Bug Fixer.txt",
     "Meeting Summarizer.txt",
     "Email Polisher.txt",
     "Learn a New Skill.txt",
     "Social Media Calendar.txt",
-    "Midjourney Portrait.txt"
+    "Midjourney Portrait.txt",
+    "SEO Content Strategist.txt" // Your new long prompt!
 ];
 
-let prompts = []; // We will store the fetched data here
+let prompts = []; 
 
 const grid = document.getElementById('prompt-grid');
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
 
-// 2. FETCH AND READ THE TEXT FILES
+// 2. FETCH AND READ TEXT FILES
 async function loadPrompts() {
     grid.innerHTML = '<p>Loading prompts...</p>';
     prompts = [];
 
     for (const fileName of promptFiles) {
         try {
-            // Fetch the text file from the prompts folder
             const response = await fetch(`prompts/${fileName}`);
-            
-            if (!response.ok) {
-                console.error(`Could not find file: ${fileName}`);
-                continue;
-            }
+            if (!response.ok) continue;
 
             const textData = await response.text();
-            
-            // The title is the filename without '.txt'
             const title = fileName.replace('.txt', '');
             
-            // Parse category and prompt text
             let category = "General";
             let promptText = textData;
             
             const lines = textData.split('\n');
             if (lines[0].startsWith('Category:')) {
                 category = lines[0].replace('Category:', '').trim();
-                
-                // Remove the category line and the "---" separator line
                 let textLines = lines.slice(1);
                 if (textLines[0].trim() === '---') {
                     textLines = textLines.slice(1);
@@ -54,27 +42,20 @@ async function loadPrompts() {
                 promptText = textLines.join('\n').trim();
             }
 
-            // Save to our array
             prompts.push({ title, category, text: promptText });
-
         } catch (error) {
             console.error("Error loading file:", error);
         }
     }
 
-    // Build the UI
     populateCategories();
     renderPrompts(prompts);
 }
 
-// 3. GENERATE CATEGORY DROPDOWN DYNAMICALLY
+// 3. GENERATE CATEGORIES
 function populateCategories() {
-    // Get unique categories from our prompts
     const uniqueCategories = [...new Set(prompts.map(p => p.category))];
-    
-    // Keep the "All" option, but clear the rest
     categoryFilter.innerHTML = '<option value="All">All Categories</option>';
-    
     uniqueCategories.forEach(category => {
         const option = document.createElement('option');
         option.value = category;
@@ -83,7 +64,7 @@ function populateCategories() {
     });
 }
 
-// 4. RENDER THE CARDS
+// 4. RENDER CARDS & BULLETPROOF COPY BUTTON
 function renderPrompts(promptArray) {
     grid.innerHTML = ''; 
     
@@ -95,14 +76,36 @@ function renderPrompts(promptArray) {
     promptArray.forEach(prompt => {
         const card = document.createElement('div');
         card.className = 'card';
+        
+        // Build the HTML WITHOUT inline onclick attributes
         card.innerHTML = `
             <div class="card-header">
-                <h3 style="margin: 0;">${prompt.title}</h3>
+                <h3>${prompt.title}</h3>
                 <span class="category-tag">${prompt.category}</span>
             </div>
             <div class="prompt-text">${prompt.text}</div>
-            <button class="copy-btn" onclick="copyPrompt(this, \`${prompt.text.replace(/`/g, '\\`')}\`)">Copy Prompt</button>
+            <button class="copy-btn">Copy Prompt</button>
         `;
+
+        // Safely attach the click event in Javascript
+        const copyBtn = card.querySelector('.copy-btn');
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(prompt.text).then(() => {
+                // Change button state
+                copyBtn.innerText = 'Copied! ✅';
+                copyBtn.classList.add('copied');
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    copyBtn.innerText = 'Copy Prompt';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Copy failed', err);
+                copyBtn.innerText = 'Failed!';
+            });
+        });
+
         grid.appendChild(card);
     });
 }
@@ -122,20 +125,6 @@ function filterPrompts() {
     renderPrompts(filtered);
 }
 
-// 6. COPY TO CLIPBOARD
-function copyPrompt(buttonElement, textToCopy) {
-    navigator.clipboard.writeText(textToCopy).then(() => {
-        const originalText = buttonElement.innerText;
-        buttonElement.innerText = 'Copied! ✅';
-        buttonElement.classList.add('copied');
-        setTimeout(() => {
-            buttonElement.innerText = originalText;
-            buttonElement.classList.remove('copied');
-        }, 2000);
-    });
-}
-
-// Event Listeners
 searchInput.addEventListener('input', filterPrompts);
 categoryFilter.addEventListener('change', filterPrompts);
 
