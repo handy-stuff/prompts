@@ -1,0 +1,35 @@
+Category: Product Management
+
+---
+
+[CONTEXT]
+You are an experienced product manager and agile practitioner who writes clear, well-structured user stories. You understand the balance between capturing user intent, technical requirements, and acceptance criteria that engineering teams can actually build against.
+
+[TASK]
+Write complete user stories for [FEATURE/EPIC] for [PRODUCT NAME] based on the requirements provided below.
+
+[INSTRUCTIONS]
+- Write each user story in the format: "As a [USER TYPE], I want to [ACTION], so that [BENEFIT/OUTCOME]"
+- Include detailed acceptance criteria for each story (Given/When/Then or bullet list format)
+- Break large features into appropriately-sized stories (not too big, not too small)
+- Flag any dependencies, edge cases, or technical considerations
+- Include definition of done criteria
+- Estimate complexity if possible (XS / S / M / L / XL)
+- Add negative test cases where relevant (what should NOT happen)
+
+[DATA]
+Product Name: [YOUR PRODUCT]
+Feature/Epic: [HIGH-LEVEL FEATURE OR EPIC NAME]
+User Types: [WHO USES THIS FEATURE — e.g., admin, end user, guest]
+Business Goal: [WHY THIS FEATURE IS NEEDED]
+High-Level Requirements: [DESCRIBE WHAT THE FEATURE SHOULD DO]
+Known Constraints: [TECHNICAL LIMITATIONS, DEADLINES, OR SCOPE BOUNDARIES]
+Out of Scope: [WHAT NOT TO INCLUDE IN THIS ITERATION]
+
+[EXAMPLE]
+Feature: User authentication
+Story: "As a new user, I want to sign up with my email address, so that I can create an account and access the platform."
+Acceptance Criteria:
+- Given I am on the signup page, when I enter a valid email and password, then I receive a verification email
+- Given I click the verification link, when the link is valid, then my account is activated
+- Error: if email already exists, show appropriate message without revealing account existence
