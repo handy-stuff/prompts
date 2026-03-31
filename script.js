@@ -68,21 +68,18 @@ const searchInput = document.getElementById('searchInput');
 const categoryList = document.getElementById('category-list');
 const countDisplay = document.getElementById('prompt-count');
 
+// --- MODAL ELEMENTS ---
+const modalOverlay = document.getElementById('prompt-modal');
+const closeModalBtn = document.getElementById('close-modal-btn');
+const modalTitle = document.getElementById('modal-title');
+const modalCategory = document.getElementById('modal-category');
+const modalText = document.getElementById('modal-text');
+const modalCopyBtn = document.getElementById('modal-copy-btn');
+let currentModalPromptText = ""; 
+
+
 // 2. PARALLEL FETCHING
 async function loadPrompts() {
-    
-    // Security check for local file double-click
-    if (window.location.protocol === 'file:') {
-        grid.innerHTML = `
-            <div style="background: #ffebee; color: #c62828; padding: 20px; border-radius: 8px; grid-column: 1 / -1; border: 1px solid #ef9a9a;">
-                <h3 style="margin-top:0;">⚠️ Security Block (Local File)</h3>
-                <p>Browsers block scripts from reading folders when you open files directly (your URL starts with <code>file:///</code>).</p>
-                <p><strong>Fix:</strong> Push your code to GitHub Pages, or use VS Code "Live Server" locally.</p>
-            </div>
-        `;
-        return; 
-    }
-
     grid.innerHTML = '<p>Loading prompts...</p>';
 
     const fetchPromises = promptFiles.map(async (fileName) => {
@@ -117,20 +114,6 @@ async function loadPrompts() {
     const results = await Promise.all(fetchPromises);
     prompts = results.filter(p => p !== null);
 
-    if (prompts.length === 0) {
-        grid.innerHTML = `
-            <div style="background: #fff3cd; color: #856404; padding: 20px; border-radius: 8px; grid-column: 1 / -1; border: 1px solid #ffeeba;">
-                <h3 style="margin-top:0;">⚠️ No Prompts Found</h3>
-                <p>Could not load any text files. Please check:</p>
-                <ul>
-                    <li>Is your folder named exactly <code>prompts</code>? (lowercase)</li>
-                    <li>Are the text files uploaded to GitHub?</li>
-                </ul>
-            </div>
-        `;
-        return; 
-    }
-
     populateCategories();
     renderPrompts(prompts);
 }
@@ -156,7 +139,7 @@ function populateCategories() {
     });
 }
 
-// 4. RENDER CARDS & DYNAMIC COUNTER
+// 4. RENDER CARDS
 function renderPrompts(promptArray) {
     grid.innerHTML = ''; 
     
@@ -177,7 +160,6 @@ function renderPrompts(promptArray) {
         const card = document.createElement('div');
         card.className = 'card';
         
-        // ADDED: The .card-actions div and the .view-btn anchor tag!
         card.innerHTML = `
             <div class="card-header">
                 <h3>${prompt.title}</h3>
@@ -186,10 +168,11 @@ function renderPrompts(promptArray) {
             <div class="prompt-text">${prompt.text}</div>
             <div class="card-actions">
                 <button class="copy-btn">Copy Prompt</button>
-                <a href="prompt.html?file=${encodeURIComponent(prompt.title)}" class="view-btn" target="_blank" title="Open in new page">➔</a>
+                <button class="view-btn" title="View Full Prompt">➔</button>
             </div>
         `;
 
+        // Card Copy Button
         const copyBtn = card.querySelector('.copy-btn');
         copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText(prompt.text).then(() => {
@@ -202,11 +185,54 @@ function renderPrompts(promptArray) {
             });
         });
 
+        // View Button -> Opens Pop-up Modal on the same page
+        const viewBtn = card.querySelector('.view-btn');
+        viewBtn.addEventListener('click', () => openModal(prompt));
+
         grid.appendChild(card);
     });
 }
 
-// 5. SEARCH & MULTI-SELECT FILTER
+// 5. MODAL POP-UP LOGIC
+function openModal(prompt) {
+    modalTitle.innerText = prompt.title;
+    modalCategory.innerText = prompt.category;
+    modalText.innerText = prompt.text;
+    currentModalPromptText = prompt.text;
+    
+    // Reset modal copy button
+    modalCopyBtn.innerText = 'Copy Full Prompt';
+    modalCopyBtn.classList.remove('copied');
+
+    // Show modal
+    modalOverlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Stop background scrolling
+}
+
+function closeModal() {
+    modalOverlay.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Restore background scrolling
+}
+
+closeModalBtn.addEventListener('click', closeModal);
+
+modalOverlay.addEventListener('click', (e) => {
+    // Only close if they clicked the dark background, not the white box
+    if (e.target === modalOverlay) closeModal();
+});
+
+modalCopyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(currentModalPromptText).then(() => {
+        modalCopyBtn.innerText = 'Copied! ✅';
+        modalCopyBtn.classList.add('copied');
+        setTimeout(() => {
+            modalCopyBtn.innerText = 'Copy Full Prompt';
+            modalCopyBtn.classList.remove('copied');
+        }, 2000);
+    });
+});
+
+// 6. SEARCH & FILTER
 function filterPrompts() {
     const searchTerm = searchInput.value.toLowerCase();
     
