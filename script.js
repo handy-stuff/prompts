@@ -55,6 +55,7 @@ const promptFiles = [
   "Workout Plan Generator.txt"
 ];
 
+
 let prompts = []; 
 
 const grid = document.getElementById('prompt-grid');
@@ -63,13 +64,33 @@ const categoryList = document.getElementById('category-list');
 
 // 2. FETCH AND READ TEXT FILES
 async function loadPrompts() {
+    
+    // 🔴 SMART ERROR: Checks if you are trying to open this via local double-click
+    if (window.location.protocol === 'file:') {
+        grid.innerHTML = `
+            <div style="background: #ffebee; color: #c62828; padding: 20px; border-radius: 8px; grid-column: 1 / -1; border: 1px solid #ef9a9a;">
+                <h3 style="margin-top:0;">⚠️ Security Block (Local File)</h3>
+                <p>Browsers block scripts from reading folders for security reasons when you open files directly (your URL starts with <code>file:///</code>).</p>
+                <p><strong>How to fix this:</strong></p>
+                <ul>
+                    <li><strong>Online:</strong> Push your code to GitHub Pages. It will work perfectly there!</li>
+                    <li><strong>Locally:</strong> Open this folder in VS Code, install the <b>Live Server</b> extension, and click "Go Live".</li>
+                </ul>
+            </div>
+        `;
+        return; // Stops the script here
+    }
+
     grid.innerHTML = '<p>Loading prompts...</p>';
     prompts = [];
 
     for (const fileName of promptFiles) {
         try {
             const response = await fetch(`prompts/${fileName}`);
-            if (!response.ok) continue;
+            if (!response.ok) {
+                console.warn(`Could not find: ${fileName}`);
+                continue;
+            }
 
             const textData = await response.text();
             const title = fileName.replace('.txt', '');
@@ -93,36 +114,43 @@ async function loadPrompts() {
         }
     }
 
+    // 🟡 SMART ERROR: Checks if files were spelled wrong or the folder is missing
+    if (prompts.length === 0) {
+        grid.innerHTML = `
+            <div style="background: #fff3cd; color: #856404; padding: 20px; border-radius: 8px; grid-column: 1 / -1; border: 1px solid #ffeeba;">
+                <h3 style="margin-top:0;">⚠️ No Prompts Found</h3>
+                <p>The code couldn't find your text files. Please verify:</p>
+                <ol>
+                    <li>You have a folder named exactly <code>prompts</code> (lowercase).</li>
+                    <li>Your text file names exactly match the array in <code>script.js</code> (It is case-sensitive!).</li>
+                    <li>If you are on GitHub, make sure you uploaded the <code>prompts</code> folder.</li>
+                </ol>
+            </div>
+        `;
+        return; // Stops the script here
+    }
+
     populateCategories();
     renderPrompts(prompts);
 }
 
 // 3. GENERATE SIDEBAR CHECKBOXES
 function populateCategories() {
-    // Get unique categories and sort them alphabetically
     const uniqueCategories = [...new Set(prompts.map(p => p.category))].sort();
-    
     categoryList.innerHTML = ''; 
 
     uniqueCategories.forEach(category => {
-        // Create the label wrapper
         const label = document.createElement('label');
         label.className = 'category-item';
 
-        // Create the checkbox
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.value = category;
         checkbox.className = 'category-checkbox';
-        
-        // Listen for clicks on the checkbox
         checkbox.addEventListener('change', filterPrompts);
 
-        // Add checkbox and text to label
         label.appendChild(checkbox);
         label.appendChild(document.createTextNode(category));
-
-        // Add to sidebar
         categoryList.appendChild(label);
     });
 }
@@ -170,18 +198,12 @@ function renderPrompts(promptArray) {
 function filterPrompts() {
     const searchTerm = searchInput.value.toLowerCase();
     
-    // Find all checkboxes that are currently checked
     const checkedBoxes = document.querySelectorAll('.category-checkbox:checked');
-    // Map them into an array of category names
     const selectedCategories = Array.from(checkedBoxes).map(cb => cb.value);
 
     const filtered = prompts.filter(prompt => {
-        // Check text search
         const matchesSearch = prompt.title.toLowerCase().includes(searchTerm) || 
                               prompt.text.toLowerCase().includes(searchTerm);
-        
-        // If NO boxes are checked, we show everything.
-        // Otherwise, the prompt's category must be inside our selectedCategories array.
         const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(prompt.category);
         
         return matchesSearch && matchesCategory;
@@ -190,7 +212,6 @@ function filterPrompts() {
     renderPrompts(filtered);
 }
 
-// Listen for typing in the search bar
 searchInput.addEventListener('input', filterPrompts);
 
 // START APP
