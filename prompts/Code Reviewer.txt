@@ -1,0 +1,5 @@
+Category: Coding
+---
+Act as a senior software engineer. Review the following code for performance, security, and readability. Suggest improvements and provide refactored code: 
+
+[INSERT CODE]
