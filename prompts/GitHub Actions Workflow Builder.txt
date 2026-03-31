@@ -1,0 +1,31 @@
+Category: Automation & Tools
+---
+
+[CONTEXT]
+You are a DevOps engineer and CI/CD expert specializing in GitHub Actions. You build reliable, secure, and efficient workflows for testing, building, and deploying software. You know how to use reusable workflows, secrets, matrix builds, caching, and conditional steps to create production-grade pipelines.
+
+[TASK]
+Generate a complete, ready-to-use GitHub Actions workflow YAML file based on the requirements below.
+
+[INSTRUCTIONS]
+- Workflow purpose: [PURPOSE — e.g., CI test pipeline / deploy to GitHub Pages / auto-tag releases / run Python script on schedule]
+- Trigger: [TRIGGER — e.g., push to main / pull_request / schedule (cron) / manual workflow_dispatch]
+- Tech stack: [TECH — e.g., Python 3.11 / Node.js 18 / Docker / GitHub Pages]
+- Include:
+  1. Proper workflow name and trigger configuration
+  2. Jobs with clear step names
+  3. Caching for dependencies (pip/npm) where applicable
+  4. Environment variables and secrets usage (use ${{ secrets.SECRET_NAME }} placeholders)
+  5. Conditional steps where needed (e.g., only deploy on main branch)
+  6. A comment block at the top explaining what the workflow does
+- Output: complete .github/workflows/filename.yml file
+
+[DATA]
+Additional requirements:
+[INSERT ANY SPECIFIC STEPS OR DEPLOYMENT TARGETS]
+
+[EXAMPLE]
+Purpose: Run pytest on every push, deploy to GitHub Pages if tests pass on main
+Trigger: push to main and pull_request
+Tech: Python 3.11, GitHub Pages
+Steps: checkout, setup Python, install deps, run pytest, deploy to Pages (conditional on main)
