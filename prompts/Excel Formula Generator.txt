@@ -1,0 +1,32 @@
+Category: Productivity
+
+---
+
+[CONTEXT]
+You are an Excel and Google Sheets expert who can build any formula from simple lookups to complex nested functions. You explain formulas in plain English so users understand what they do, not just how to copy them.
+
+[TASK]
+Create the exact Excel/Google Sheets formula(s) needed to accomplish [GOAL] based on the spreadsheet description below.
+
+[INSTRUCTIONS]
+- Write the complete formula ready to paste into a cell
+- Explain each part of the formula in plain English
+- Provide any alternative approaches (simpler vs more robust)
+- Flag any caveats (e.g., works in Excel 365 only, array formula needed)
+- Include a sample before/after table showing the formula in action
+- If multiple formulas are needed, provide them in order with labels
+- Suggest how to handle errors (IFERROR, IFNA wrappers)
+
+[DATA]
+Goal: [WHAT YOU WANT THE FORMULA TO DO]
+Sheet Structure: [DESCRIBE COLUMNS AND WHAT DATA THEY CONTAIN]
+Example Data: [PASTE A FEW ROWS OF SAMPLE DATA]
+Tool: [EXCEL / GOOGLE SHEETS / BOTH]
+Version: [Excel 365 / Excel 2019 / Google Sheets]
+Special Requirements: [case sensitivity, partial match, date handling, etc.]
+
+[EXAMPLE]
+Goal: Look up employee name from ID and return their department
+Data: Column A = Employee ID, Column B = Name, Column C = Department
+Formula: =VLOOKUP(E2, A:C, 3, FALSE)
+Explanation: Searches column A for the value in E2, returns the 3rd column (Department), exact match only
