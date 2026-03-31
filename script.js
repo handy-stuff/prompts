@@ -55,12 +55,11 @@ const promptFiles = [
   "Workout Plan Generator.txt"
 ];
 
-
 let prompts = []; 
 
 const grid = document.getElementById('prompt-grid');
 const searchInput = document.getElementById('searchInput');
-const categoryFilter = document.getElementById('categoryFilter');
+const categoryList = document.getElementById('category-list');
 
 // 2. FETCH AND READ TEXT FILES
 async function loadPrompts() {
@@ -98,24 +97,42 @@ async function loadPrompts() {
     renderPrompts(prompts);
 }
 
-// 3. GENERATE CATEGORIES
+// 3. GENERATE SIDEBAR CHECKBOXES
 function populateCategories() {
-    const uniqueCategories = [...new Set(prompts.map(p => p.category))];
-    categoryFilter.innerHTML = '<option value="All">All Categories</option>';
+    // Get unique categories and sort them alphabetically
+    const uniqueCategories = [...new Set(prompts.map(p => p.category))].sort();
+    
+    categoryList.innerHTML = ''; 
+
     uniqueCategories.forEach(category => {
-        const option = document.createElement('option');
-        option.value = category;
-        option.textContent = category;
-        categoryFilter.appendChild(option);
+        // Create the label wrapper
+        const label = document.createElement('label');
+        label.className = 'category-item';
+
+        // Create the checkbox
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = category;
+        checkbox.className = 'category-checkbox';
+        
+        // Listen for clicks on the checkbox
+        checkbox.addEventListener('change', filterPrompts);
+
+        // Add checkbox and text to label
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(category));
+
+        // Add to sidebar
+        categoryList.appendChild(label);
     });
 }
 
-// 4. RENDER CARDS & BULLETPROOF COPY BUTTON
+// 4. RENDER CARDS & COPY BUTTON
 function renderPrompts(promptArray) {
     grid.innerHTML = ''; 
     
     if (promptArray.length === 0) {
-        grid.innerHTML = '<p>No prompts found.</p>';
+        grid.innerHTML = '<p>No prompts found matching your criteria.</p>';
         return;
     }
 
@@ -123,7 +140,6 @@ function renderPrompts(promptArray) {
         const card = document.createElement('div');
         card.className = 'card';
         
-        // Build the HTML WITHOUT inline onclick attributes
         card.innerHTML = `
             <div class="card-header">
                 <h3>${prompt.title}</h3>
@@ -133,22 +149,16 @@ function renderPrompts(promptArray) {
             <button class="copy-btn">Copy Prompt</button>
         `;
 
-        // Safely attach the click event in Javascript
         const copyBtn = card.querySelector('.copy-btn');
         copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText(prompt.text).then(() => {
-                // Change button state
                 copyBtn.innerText = 'Copied! ✅';
                 copyBtn.classList.add('copied');
                 
-                // Reset after 2 seconds
                 setTimeout(() => {
                     copyBtn.innerText = 'Copy Prompt';
                     copyBtn.classList.remove('copied');
                 }, 2000);
-            }).catch(err => {
-                console.error('Copy failed', err);
-                copyBtn.innerText = 'Failed!';
             });
         });
 
@@ -156,23 +166,32 @@ function renderPrompts(promptArray) {
     });
 }
 
-// 5. SEARCH & FILTER
+// 5. SEARCH & MULTI-SELECT FILTER
 function filterPrompts() {
     const searchTerm = searchInput.value.toLowerCase();
-    const selectedCategory = categoryFilter.value;
+    
+    // Find all checkboxes that are currently checked
+    const checkedBoxes = document.querySelectorAll('.category-checkbox:checked');
+    // Map them into an array of category names
+    const selectedCategories = Array.from(checkedBoxes).map(cb => cb.value);
 
     const filtered = prompts.filter(prompt => {
+        // Check text search
         const matchesSearch = prompt.title.toLowerCase().includes(searchTerm) || 
                               prompt.text.toLowerCase().includes(searchTerm);
-        const matchesCategory = selectedCategory === "All" || prompt.category === selectedCategory;
+        
+        // If NO boxes are checked, we show everything.
+        // Otherwise, the prompt's category must be inside our selectedCategories array.
+        const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(prompt.category);
+        
         return matchesSearch && matchesCategory;
     });
 
     renderPrompts(filtered);
 }
 
+// Listen for typing in the search bar
 searchInput.addEventListener('input', filterPrompts);
-categoryFilter.addEventListener('change', filterPrompts);
 
-// START THE APP
+// START APP
 loadPrompts();
