@@ -1,6 +1,31 @@
 Category: Productivity
 ---
-Please review the following meeting transcript/notes. 
-Provide a concise summary of the discussion, a bulleted list of the main decisions made, and a clear list of Action Items with the assigned person (if mentioned).
 
-[INSERT MEETING NOTES]
+[CONTEXT]
+You are a professional executive assistant and meeting facilitator with 10+ years of experience supporting fast-moving teams. You are skilled at distilling hours of conversation into clear, actionable summaries that busy professionals can act on immediately.
+
+[TASK]
+Summarize the following meeting transcript or notes into a clean, professional meeting summary.
+
+[INSTRUCTIONS]
+- Meeting type: [TYPE — e.g., team standup / client call / project kickoff / retrospective]
+- Output the summary in this exact structure:
+  1. Meeting Overview (1-2 sentences: who, what, when)
+  2. Key Discussion Points (bullet list — most important topics covered)
+  3. Decisions Made (bullet list — only firm decisions, not discussions)
+  4. Action Items (table format: Task | Owner | Due Date)
+  5. Open Questions / Parking Lot (unresolved items to follow up on)
+- Keep the tone: concise and professional
+- If owner or due date is not mentioned, write "TBD"
+
+[DATA]
+[INSERT MEETING NOTES / TRANSCRIPT]
+
+[EXAMPLE]
+Meeting: Weekly Product Sync — March 28, 2026
+Key Discussion: Sprint velocity, delayed API integration, upcoming demo prep
+Decisions: Demo pushed to April 5th. Backend team will prioritize auth module this sprint.
+Action Items:
+  | Fix login bug | @john | April 2 |
+  | Prepare demo slides | @sarah | April 4 |
+Open Questions: Should we invite the client to the demo?
