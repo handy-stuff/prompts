@@ -1,60 +1,59 @@
 // 1. ADD YOUR TEXT FILE NAMES HERE
 const promptFiles = [
-  "AB Test Copy Writer.txt",
-  "API Documentation Writer.txt",
-  "Blog Post Outline.txt",
-  "Bug Fixer.txt",
-  "Changelog Generator.txt",
-  "Code Explainer.txt",
-  "Code Refactorer.txt",
-  "Code Reviewer.txt",
-  "Cold Email Writer.txt",
-  "Cover Letter Writer.txt",
-  "Customer Persona Builder.txt",
-  "Data Analysis Assistant.txt",
-  "Database Schema Designer.txt",
-  "Docker DevOps Script Helper.txt",
-  "Email Polisher.txt",
-  "Essay Writer.txt",
-  "FAQ Generator.txt",
-  "Git Commit Message Generator.txt",
-  "GitHub Actions Workflow Builder.txt",
-  "Interview Prep Coach.txt",
-  "Job Description Writer.txt",
-  "Landing Page Copy Writer.txt",
-  "Learn a New Skill.txt",
-  "LinkedIn Post Generator.txt",
-  "Meeting Summarizer.txt",
-  "Midjourney Portrait.txt",
-  "Negotiation Script.txt",
-  "Newsletter Writer.txt",
-  "Onboarding Email Sequence.txt",
-  "Performance Review Writer.txt",
-  "Pitch Deck Outliner.txt",
-  "Press Release Writer.txt",
-  "Product Description Writer.txt",
-  "Prompt Improver.txt",
-  "Python Script Generator.txt",
-  "README Generator.txt",
-  "Recipe Creator.txt",
-  "Regex Pattern Generator.txt",
-  "Resume Tailorer.txt",
-  "SEO Content Brief.txt",
-  "SQL Query Builder.txt",
-  "Slack Message Drafter.txt",
-  "Snowflake Schema Builder.txt",
-  "Social Media Calendar.txt",
-  "Storytelling Fiction Writer.txt",
-  "System Prompt Builder.txt",
-  "Terraform IaC Generator.txt",
-  "Travel Itinerary Planner.txt",
-  "Unit Test Generator.txt",
-  "User Story Writer.txt",
-  "Video Script Writer.txt",
-  "Weekly Planner.txt",
-  "Workout Plan Generator.txt"
+    "AB Test Copy Writer.txt",
+    "API Documentation Writer.txt",
+    "Blog Post Outline.txt",
+    "Bug Fixer.txt",
+    "Changelog Generator.txt",
+    "Code Explainer.txt",
+    "Code Refactorer.txt",
+    "Code Reviewer.txt",
+    "Cold Email Writer.txt",
+    "Cover Letter Writer.txt",
+    "Customer Persona Builder.txt",
+    "Data Analysis Assistant.txt",
+    "Database Schema Designer.txt",
+    "Docker DevOps Script Helper.txt",
+    "Email Polisher.txt",
+    "Essay Writer.txt",
+    "FAQ Generator.txt",
+    "Git Commit Message Generator.txt",
+    "GitHub Actions Workflow Builder.txt",
+    "Interview Prep Coach.txt",
+    "Job Description Writer.txt",
+    "Landing Page Copy Writer.txt",
+    "Learn a New Skill.txt",
+    "LinkedIn Post Generator.txt",
+    "Meeting Summarizer.txt",
+    "Midjourney Portrait.txt",
+    "Negotiation Script.txt",
+    "Newsletter Writer.txt",
+    "Onboarding Email Sequence.txt",
+    "Performance Review Writer.txt",
+    "Pitch Deck Outliner.txt",
+    "Press Release Writer.txt",
+    "Product Description Writer.txt",
+    "Prompt Improver.txt",
+    "Python Script Generator.txt",
+    "README Generator.txt",
+    "Recipe Creator.txt",
+    "Regex Pattern Generator.txt",
+    "Resume Tailorer.txt",
+    "SEO Content Brief.txt",
+    "SQL Query Builder.txt",
+    "Slack Message Drafter.txt",
+    "Snowflake Schema Builder.txt",
+    "Social Media Calendar.txt",
+    "Storytelling Fiction Writer.txt",
+    "System Prompt Builder.txt",
+    "Terraform IaC Generator.txt",
+    "Travel Itinerary Planner.txt",
+    "Unit Test Generator.txt",
+    "User Story Writer.txt",
+    "Video Script Writer.txt",
+    "Weekly Planner.txt",
+    "Workout Plan Generator.txt"
 ];
-
 
 let prompts = []; 
 
@@ -62,35 +61,27 @@ const grid = document.getElementById('prompt-grid');
 const searchInput = document.getElementById('searchInput');
 const categoryList = document.getElementById('category-list');
 
-// 2. FETCH AND READ TEXT FILES
+// 2. FETCH AND READ TEXT FILES (NOW IN PARALLEL!)
 async function loadPrompts() {
     
-    // 🔴 SMART ERROR: Checks if you are trying to open this via local double-click
     if (window.location.protocol === 'file:') {
         grid.innerHTML = `
             <div style="background: #ffebee; color: #c62828; padding: 20px; border-radius: 8px; grid-column: 1 / -1; border: 1px solid #ef9a9a;">
                 <h3 style="margin-top:0;">⚠️ Security Block (Local File)</h3>
-                <p>Browsers block scripts from reading folders for security reasons when you open files directly (your URL starts with <code>file:///</code>).</p>
-                <p><strong>How to fix this:</strong></p>
-                <ul>
-                    <li><strong>Online:</strong> Push your code to GitHub Pages. It will work perfectly there!</li>
-                    <li><strong>Locally:</strong> Open this folder in VS Code, install the <b>Live Server</b> extension, and click "Go Live".</li>
-                </ul>
+                <p>Browsers block scripts from reading folders when you open files directly (your URL starts with <code>file:///</code>).</p>
+                <p><strong>Fix:</strong> Push your code to GitHub Pages, or use VS Code "Live Server" locally.</p>
             </div>
         `;
-        return; // Stops the script here
+        return; 
     }
 
     grid.innerHTML = '<p>Loading prompts...</p>';
-    prompts = [];
 
-    for (const fileName of promptFiles) {
+    // 🚀 NEW PARALLEL FETCHING MAGIC 
+    const fetchPromises = promptFiles.map(async (fileName) => {
         try {
             const response = await fetch(`prompts/${fileName}`);
-            if (!response.ok) {
-                console.warn(`Could not find: ${fileName}`);
-                continue;
-            }
+            if (!response.ok) return null; // Skip if file is missing
 
             const textData = await response.text();
             const title = fileName.replace('.txt', '');
@@ -102,32 +93,39 @@ async function loadPrompts() {
             if (lines[0].startsWith('Category:')) {
                 category = lines[0].replace('Category:', '').trim();
                 let textLines = lines.slice(1);
-                if (textLines[0].trim() === '---') {
+                
+                // Extra safety check in case the file has blank lines
+                if (textLines.length > 0 && textLines[0].trim() === '---') {
                     textLines = textLines.slice(1);
                 }
                 promptText = textLines.join('\n').trim();
             }
 
-            prompts.push({ title, category, text: promptText });
+            return { title, category, text: promptText };
         } catch (error) {
-            console.error("Error loading file:", error);
+            console.error(`Failed to load ${fileName}`, error);
+            return null;
         }
-    }
+    });
 
-    // 🟡 SMART ERROR: Checks if files were spelled wrong or the folder is missing
+    // Wait for all 54 files to load simultaneously
+    const results = await Promise.all(fetchPromises);
+    
+    // Remove any nulls (files that couldn't be loaded)
+    prompts = results.filter(p => p !== null);
+
     if (prompts.length === 0) {
         grid.innerHTML = `
             <div style="background: #fff3cd; color: #856404; padding: 20px; border-radius: 8px; grid-column: 1 / -1; border: 1px solid #ffeeba;">
                 <h3 style="margin-top:0;">⚠️ No Prompts Found</h3>
-                <p>The code couldn't find your text files. Please verify:</p>
-                <ol>
-                    <li>You have a folder named exactly <code>prompts</code> (lowercase).</li>
-                    <li>Your text file names exactly match the array in <code>script.js</code> (It is case-sensitive!).</li>
-                    <li>If you are on GitHub, make sure you uploaded the <code>prompts</code> folder.</li>
-                </ol>
+                <p>Could not load any text files. Please check:</p>
+                <ul>
+                    <li>Is your folder named exactly <code>prompts</code>? (lowercase)</li>
+                    <li>Are the text files uploaded to GitHub?</li>
+                </ul>
             </div>
         `;
-        return; // Stops the script here
+        return; 
     }
 
     populateCategories();
@@ -160,7 +158,7 @@ function renderPrompts(promptArray) {
     grid.innerHTML = ''; 
     
     if (promptArray.length === 0) {
-        grid.innerHTML = '<p>No prompts found matching your criteria.</p>';
+        grid.innerHTML = '<p style="grid-column: 1 / -1;">No prompts found matching your search.</p>';
         return;
     }
 
@@ -182,7 +180,6 @@ function renderPrompts(promptArray) {
             navigator.clipboard.writeText(prompt.text).then(() => {
                 copyBtn.innerText = 'Copied! ✅';
                 copyBtn.classList.add('copied');
-                
                 setTimeout(() => {
                     copyBtn.innerText = 'Copy Prompt';
                     copyBtn.classList.remove('copied');
