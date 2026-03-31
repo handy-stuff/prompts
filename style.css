@@ -26,6 +26,7 @@ header {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap; /* Helps on mobile screens */
 }
 
 input, select {
@@ -38,6 +39,7 @@ input, select {
 
 input {
     width: 300px;
+    max-width: 100%;
 }
 
 main {
@@ -52,6 +54,7 @@ main {
     gap: 20px;
 }
 
+/* --- UPDATED CARD STYLES --- */
 .card {
     background: var(--card-bg);
     padding: 20px;
@@ -61,6 +64,7 @@ main {
     flex-direction: column;
     border: 1px solid var(--border-color);
     transition: transform 0.2s;
+    height: 420px; /* FIXED HEIGHT FOR ALL CARDS */
 }
 
 .card:hover {
@@ -81,18 +85,48 @@ main {
     border-radius: 4px;
     font-size: 0.8rem;
     color: #666;
+    white-space: nowrap;
 }
 
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+/* --- UPDATED PROMPT TEXT STYLES --- */
 .prompt-text {
     background: var(--bg-color);
     padding: 15px;
     border-radius: 5px;
     font-family: monospace;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     white-space: pre-wrap;
     flex-grow: 1;
     margin-bottom: 15px;
     color: #444;
+    
+    /* SCROLLING MAGIC HAPPENS HERE */
+    overflow-y: auto; 
+    max-height: 100%;
+}
+
+/* Custom Scrollbar for a cleaner look */
+.prompt-text::-webkit-scrollbar {
+    width: 6px;
+}
+.prompt-text::-webkit-scrollbar-track {
+    background: transparent; 
+}
+.prompt-text::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 10px;
+}
+.prompt-text::-webkit-scrollbar-thumb:hover {
+    background: #aaa; 
 }
 
 .copy-btn {
@@ -104,6 +138,7 @@ main {
     cursor: pointer;
     font-weight: bold;
     transition: background 0.2s;
+    margin-top: auto; /* Pushes button to the very bottom */
 }
 
 .copy-btn:hover {
