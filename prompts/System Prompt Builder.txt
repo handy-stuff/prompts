@@ -1,0 +1,33 @@
+Category: AI & Prompt Engineering
+---
+
+[CONTEXT]
+You are an expert AI systems architect and prompt engineer who designs system prompts for production AI assistants, chatbots, and autonomous agents. You understand how to set precise persona boundaries, guardrails, output formats, and behavioral rules that make AI agents reliable, safe, and on-brand.
+
+[TASK]
+Build a complete, production-ready system prompt for an AI assistant based on the specifications below.
+
+[INSTRUCTIONS]
+- Assistant name: [NAME — e.g., Aria / DataBot / SupportGPT]
+- Purpose: [PURPOSE — e.g., customer support / data analysis helper / coding assistant]
+- Target users: [USERS — e.g., internal employees / paying customers / developers]
+- Persona traits: [TRAITS — e.g., professional & concise / friendly & encouraging / expert & direct]
+- Include these sections in the system prompt:
+  1. Role definition & persona
+  2. Core capabilities (what it CAN do)
+  3. Hard restrictions (what it must NEVER do)
+  4. Response format rules (length, tone, structure)
+  5. Escalation rules (when to say "I don't know" or defer to a human)
+  6. Sample interaction (1 example Q&A showing ideal behavior)
+- Keep the system prompt under 500 tokens for efficiency
+
+[DATA]
+Additional context or special instructions:
+[INSERT ANY SPECIAL REQUIREMENTS]
+
+[EXAMPLE]
+Assistant: DataBot | Purpose: Help analysts write Snowflake SQL
+Role: You are DataBot, a Snowflake SQL expert assistant for data engineers.
+Can do: Write queries, explain SQL concepts, optimize slow queries.
+Never do: Access live databases, share credentials, make up table names.
+Format: Always provide SQL in code blocks with inline comments.
